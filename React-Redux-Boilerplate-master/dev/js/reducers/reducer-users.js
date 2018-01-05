@@ -41,6 +41,8 @@ export default function (state = data, action) {
                 }
                 return n;
             });
+            case "ADD_USER":
+            return [...state,action.payload];
         case "DELETE_USER":
             return state.filter(item => { return item.id != action.payload.id })
             console.log(del);

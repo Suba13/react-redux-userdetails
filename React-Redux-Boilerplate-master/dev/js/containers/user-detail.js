@@ -25,17 +25,31 @@ class UserDetail extends Component {
         this.state.user.last = eventlast.target.value;
         this.setState({ user: this.state.user });
     }
+    // componentWillReceiveProps(nextProps) {
+    //     this.setState({
+    //         user: {
+    //             first: nextProps.user.first,
+    //             last: nextProps.user.last,
+    //             age: nextProps.user.age,
+    //             description: nextProps.user.description,
+    //             id: nextProps.user.id,
+    //             thumbnail: nextProps.user.thumbnail
+    //         }
+    //     })
+    // }
     componentWillReceiveProps(nextProps) {
-        this.setState({
-            user: {
-                first: nextProps.user.first,
-                last: nextProps.user.last,
-                age: nextProps.user.age,
-                description: nextProps.user.description,
-                id: nextProps.user.id,
-                thumbnail: nextProps.user.thumbnail
-            }
-        })
+        if (nextProps.user) {
+            this.setState({
+                newUser: {
+                    first: nextProps.user.first,
+                    last: nextProps.user.last,
+                    age: nextProps.user.age,
+                    thumbnail: nextProps.user.thumbnail,
+                    description: nextProps.user.description,
+                    id: nextProps.user.id
+                }
+            });
+        }
     }
     shouldComponentUpdate(nextProps, nextState) {
         console.log("should component update");
@@ -50,17 +64,20 @@ class UserDetail extends Component {
     }
     render() {
         if (!this.props.user) {
-            return (<div>Select a user...</div>);
+            return (<div>
+                {this.props.showContent.showContent == 2 ?
+                    <div> <h2>User Details</h2> Select a user...</div> : null}</div>);
         }
         return (
             <div>
-                <img src={this.props.user.thumbnail} />
-                <h2>{this.props.user.first} <input type="text" placeholder={this.state.user.last} value={this.state.user.last} onChange={this.handleLastNameChange.bind(this)} ></input></h2>
-                <h3>Age: <input type="text" placeholder={this.state.user.age} value={this.state.user.age} onChange={this.handleAgeChange.bind(this)} ></input></h3>
-                <h3>Description: <input type="text" placeholder={this.state.user.description} value={this.state.user.description} onChange={this.handleDesChange.bind(this)}></input></h3>
-                <button onClick={this.props.
-                    modify.bind(this, this.state.user)}> Save</button>
-
+                {this.props.showContent.showContent == 2 ? <div>
+                    <img src={this.props.user.thumbnail} />
+                    <h2>{this.props.user.first} <input type="text" placeholder={this.state.user.last} value={this.state.user.last} onChange={this.handleLastNameChange.bind(this)} ></input></h2>
+                    <h3>Age: <input type="text" placeholder={this.state.user.age} value={this.state.user.age} onChange={this.handleAgeChange.bind(this)} ></input></h3>
+                    <h3>Description: <input type="text" placeholder={this.state.user.description} value={this.state.user.description} onChange={this.handleDesChange.bind(this)}></input></h3>
+                    <button onClick={this.props.
+                        modify.bind(this, this.state.user)}> Save</button>
+                </div> : null}
             </div>
         );
     }
@@ -69,7 +86,8 @@ class UserDetail extends Component {
 // "state.activeUser" is set in reducers/index.js
 function mapStateToProps(state) {
     return {
-        user: state.activeUser
+        user: state.activeUser,
+        showContent: state.showContent
     };
 }
 function matchDispatchToProps(dispatch) {

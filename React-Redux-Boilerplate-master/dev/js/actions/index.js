@@ -16,3 +16,16 @@ export const modify = (user) => {
         payload: user
     }
 };
+export const showDetails = (value) => {
+    return {
+    type: 'showDetails',
+    payload: {showContent:value}
+    }
+    };
+    export const addUser=(user)=>{
+        console.log(user);
+        return{
+            type:'ADD_USER',
+            payload:user
+        }
+    };
