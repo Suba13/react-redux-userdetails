@@ -23,7 +23,7 @@ class AddDetail extends Component {
     render() {
         return (
             <div>
-                {this.props.showContent.showContent == 1 ? <div>
+                {/* {this.props.showContent.showContent == 1 ? <div> */}
                     {/* <form onSubmit={this.props.add.bind(this,this.state.addUser)}>  */}
 
                     <h3>Add user </h3>
@@ -34,7 +34,7 @@ class AddDetail extends Component {
                     Description:<input type="text" name="description" onChange={this.addUserDetail.bind(this)}></input>
                     Profile Photo : <input type="text" name="thumbnail" onChange={this.addUserDetail.bind(this)}></input>
                     <button type="button" onClick={this.props.addUser.bind(this, this.state.User)}> save</button>
-                {/* </form> */} </div>:null}
+                {/* </form> </div>:null} */}
             </div>
         );
     }

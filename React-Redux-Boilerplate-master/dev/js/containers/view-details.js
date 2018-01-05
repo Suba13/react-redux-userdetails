@@ -8,13 +8,14 @@ class ViewDetail extends Component {
             return (<div> {this.props.showContent.showContent == 3 ?<div>Select a user...</div>:null}</div>);
         }
         return (
+            // <div>
+            //      {this.props.showContent.showContent == 3?
             <div>
-                 {this.props.showContent.showContent == 3?<div>
                 <img src={this.props.user.thumbnail} />
                 <h2>{this.props.user.first} {this.props.user.last}</h2>
                 <h3>Age: {this.props.user.age}</h3>
                 <h3>Description: {this.props.user.description}</h3>
-                </div>:null}
+                 {/* </div>:null} */}
             </div>
         );
     }
