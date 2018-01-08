@@ -27,12 +27,12 @@ class AddDetail extends Component {
                     {/* <form onSubmit={this.props.add.bind(this,this.state.addUser)}>  */}
 
                     <h3>Add user </h3>
-                    Id:<input type="number" name="id" onChange={this.addUserDetail.bind(this)} ></input>
-                    First Name : <input type="text" name="first" onChange={this.addUserDetail.bind(this)} ></input>
-                    Last Name : <input type="text" name="last" onChange={this.addUserDetail.bind(this)}></input>
-                    Age : <input type="number" name="age" onChange={this.addUserDetail.bind(this)}></input>
-                    Description:<input type="text" name="description" onChange={this.addUserDetail.bind(this)}></input>
-                    Profile Photo : <input type="text" name="thumbnail" onChange={this.addUserDetail.bind(this)}></input>
+                    Id:<input type="number" name="id" onChange={this.addUserDetail.bind(this)} ></input><br/> <br/>
+                    First Name : <input type="text" name="first" onChange={this.addUserDetail.bind(this)} ></input><br/> <br/>
+                    Last Name : <input type="text" name="last" onChange={this.addUserDetail.bind(this)}></input><br/> <br/>
+                    Age : <input type="number" name="age" onChange={this.addUserDetail.bind(this)}></input><br/> <br/> <br/>
+                    Description:<input type="text" name="description" onChange={this.addUserDetail.bind(this)}></input><br/> <br/>
+                    Profile Photo : <input type="text" name="thumbnail" onChange={this.addUserDetail.bind(this)}></input><br/> <br/>
                     <button type="button" onClick={this.props.addUser.bind(this, this.state.User)}> save</button>
                 {/* </form> </div>:null} */}
             </div>

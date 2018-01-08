@@ -11,6 +11,8 @@ export const deleteUser = (user) => {
     }
 };
 export const modify = (user) => {
+    console.log("hii");
+    console.log(user);
     return {
         type: 'MODIFY_USER',
         payload: user

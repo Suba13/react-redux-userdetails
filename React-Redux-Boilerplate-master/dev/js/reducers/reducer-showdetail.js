@@ -1,4 +1,4 @@
-const data = { showContent: 0 };
+const data = { showContent: 0};
 
 export default function (state = data, action) {
 switch (action.type) {
