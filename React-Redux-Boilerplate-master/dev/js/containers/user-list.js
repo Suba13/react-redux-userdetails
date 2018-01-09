@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { selectUser, deleteUser, showDetails } from '../actions/index'
+import { selectUser, deleteUser, showDetails } from '../actions/index';
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+} from 'react-router-dom';
 class UserList extends Component {
     constructor(props) {
         super(props);
@@ -14,7 +19,7 @@ class UserList extends Component {
         this.setState({
             uservalue: user
         });
-       
+
         // console.log(this.state.uservalue);
     }
     componentWillMount() {
@@ -43,10 +48,7 @@ class UserList extends Component {
                 <div key={user.id}>
                     <input type="radio"
                         onClick={this.selected.bind(this, user)} />
-                    <li
-
-                    //onClick={() => this.props.selectUser(user)}
-                    >
+                    <li>
                         {user.first} {user.last} {user.age} {user.description}
                     </li>
                 </div>
@@ -56,15 +58,18 @@ class UserList extends Component {
     render() {
         console.log("inside list render");
         return (
-            <div>
-                <ul>
-                    {this.renderList()}
-                </ul>
-                <button onClick={this.addUser.bind(this)}> Add  </button>
-                <button onClick={this.editUser.bind(this, this.state.uservalue)}> Edit </button>
-                <button onClick={this.viewUser.bind(this, this.state.uservalue)}> View </button>
-                <button onClick={this.deleteUser.bind(this, this.state.uservalue)}> Delete </button>
-            </div>
+          
+                <div>
+                    <ul>
+                        {this.renderList()}
+                    </ul>
+                    <li><Link to="/" onClick={this.deleteUser.bind(this, this.state.uservalue)}>Delete</Link></li>
+                    <li><Link to="/add" onClick={this.addUser.bind(this)}>Add</Link></li>
+                    <li><Link to="/edit" onClick={this.editUser.bind(this, this.state.uservalue)}>Edit</Link></li>
+                    <li><Link to="/view" onClick={this.viewUser.bind(this, this.state.uservalue)}>view</Link></li>
+
+                </div>
+         
 
         );
     }

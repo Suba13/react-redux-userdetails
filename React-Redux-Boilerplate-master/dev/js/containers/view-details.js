@@ -15,6 +15,7 @@ class ViewDetail extends Component {
                 <h2>{this.props.user.first} {this.props.user.last}</h2>
                 <h3>Age: {this.props.user.age}</h3>
                 <h3>Description: {this.props.user.description}</h3>
+              
                  {/* </div>:null} */}
             </div>
         );

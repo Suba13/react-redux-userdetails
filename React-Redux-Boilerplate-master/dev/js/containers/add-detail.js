@@ -36,6 +36,7 @@ class AddDetail extends Component {
                     <button type="button" onClick={this.props.addUser.bind(this, this.state.User)}> save</button>
                 {/* </form> </div>:null} */}
             </div>
+            
         );
     }
 }

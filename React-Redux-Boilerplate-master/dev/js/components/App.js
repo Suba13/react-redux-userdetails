@@ -4,22 +4,29 @@ import UserDetails from '../containers/user-detail';
 import AddDetail from '../containers/add-detail';
 import ViewDetail from '../containers/view-details';
 import { connect } from 'react-redux';
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+} from 'react-router-dom';
 class App extends Component {
 
     render() {
         console.log("inside app render");
         return (
-            <div>
-                <h2>User List</h2>
-                <UserList />
-                <hr />
-                <h2>User Details</h2>
-                {this.props.showContent.showContent == 1 ? <AddDetail /> : null}
-                {this.props.showContent.showContent == 2 ? <UserDetails /> : null}
-                {this.props.showContent.showContent == 3 ? <ViewDetail /> : null}
+            <Router>
+                <div>
+
+                    <h2>User List</h2>
+                    <Route exact path="/" component={UserList} />
+                    <Route path="/add" component={AddDetail} />
+                    <Route path="/view" component={ViewDetail} />
+                    <Route path="/edit" component={UserDetails} />
 
 
-            </div>);
+                </div>
+            </Router>
+        );
     }
 }
 function mapStateToProps(state) {

@@ -66,6 +66,7 @@ class UserDetail extends Component {
                     <h3>Age: <input type="text" value={this.state.user.age} onChange={this.handleAgeChange.bind(this)} ></input></h3>
                     <h3>Description: <input type="text"  value={this.state.user.description} onChange={this.handleDesChange.bind(this)}></input></h3>
                     <button onClick={this.props.modify.bind(this, this.state.user)}> Save</button>
+                    
             </div>
         );
     }
