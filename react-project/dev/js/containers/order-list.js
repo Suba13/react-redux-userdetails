@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { selectUser, showDetails, deleteUser } from '../actions/index';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import '../components/app.css';
 
-class UserList extends Component {
+class OrderList extends Component {
     render() {
         console.log("user-list");
         return (
@@ -15,7 +14,7 @@ class UserList extends Component {
                         <div className="Admin_name">Admin Name:Sundaram</div>
                     </header>
                 <div className="sub-title">List of orders</div>
-                <ul>
+              
                     <table>
 
                         <th>S.NO</th>
@@ -26,7 +25,7 @@ class UserList extends Component {
 
 
 
-                        {this.props.users.map((order) => {
+                        {this.props.item.map((order) => {
                             return (
 
 
@@ -44,7 +43,7 @@ class UserList extends Component {
                             );
                         })}
                     </table>
-                </ul>
+               
 
             </div>
         );
@@ -56,7 +55,7 @@ class UserList extends Component {
 //      > whenever state changes, the UserList will automatically re-render
 function mapStateToProps(state) {
     return {
-        users: state.users
+        item: state.item
     };
 }
 
@@ -66,4 +65,4 @@ function mapStateToProps(state) {
 
 // We don't want to return the plain UserList (component) anymore, we want to return the smart Container
 //      > UserList is now aware of state and actions
-export default connect(mapStateToProps)(UserList);
+export default connect(mapStateToProps)(OrderList);

@@ -8,7 +8,7 @@ import '../components/app.css';
  * */
 class Order_detail extends Component {
     componentDidMount() {
-        const a = fetch('http://localhost:3005/Orders/' + this.props.match.params.id).then(
+        const value = fetch('http://localhost:3005/Orders/' + this.props.match.params.id).then(
             data =>
                 ({
                     type: "ORDERED_ITEM",
@@ -17,7 +17,7 @@ class Order_detail extends Component {
             error => console.log(error));
 
         store.dispatch(
-            a
+            value
         );
     };
     TableRow(row) {
@@ -50,7 +50,7 @@ class Order_detail extends Component {
     };
 
     render() {
-        if (!this.props.user) {
+        if (!this.props.item) {
             return (<div>Select a order...</div>);
         }
         return (
@@ -62,11 +62,11 @@ class Order_detail extends Component {
                     </header>
                 <div className="sub-title">List of Items</div>
                 </div>
-                <h2>USERNAME:{this.props.user.Name}</h2>
-                <h2>QUANTITY: {this.props.user.Totalquantity}</h2>
-                <h2>TOTALAMOUNT: {this.props.user.TotalAmount}</h2>
-                {this.Table(this.props.user.Orderitems)}
-                <Link to="/" >Back</Link>
+                <h2>USERNAME:{this.props.item.Name}</h2>
+                <h2>QUANTITY: {this.props.item.Totalquantity}</h2>
+                <h2>TOTALAMOUNT: {this.props.item.TotalAmount}</h2>
+                {this.Table(this.props.item.Orderitems)}
+              
 
             </div>
         );
@@ -77,7 +77,7 @@ class Order_detail extends Component {
 
 function mapStateToProps(state) {
     return {
-        user: state.activeUser
+        item: state.orderItem
     };
 }
 

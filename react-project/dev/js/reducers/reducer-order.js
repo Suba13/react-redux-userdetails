@@ -1,6 +1,6 @@
 export default function (state = data, action) {
       switch (action.type) {
-          case "LOAD":
+          case "LOAD_ADMIN_ORDER":
               return action.payload;
           default:
               return state;

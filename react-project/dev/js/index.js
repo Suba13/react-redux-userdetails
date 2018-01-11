@@ -19,7 +19,7 @@ function loadUser() {
     return fetch(' http://localhost:3005/Orders').then(
         data =>
             ({
-                type: "LOAD",
+                type: "LOAD_ADMIN_ORDER",
                 payload: data.json()
             }),
 
