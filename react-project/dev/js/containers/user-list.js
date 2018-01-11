@@ -1,25 +1,51 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { selectUser, showDetails, deleteUser } from '../actions/index';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import '../components/app.css';
 
 class UserList extends Component {
-
     render() {
         console.log("user-list");
         return (
             <div>
+                <header>
+                    <div className="title">Photon Cafe</div>
+                        <div className="Admin_name">Admin Name:Sundaram</div>
+                    </header>
+                <div className="sub-title">List of orders</div>
                 <ul>
-                    {this.props.users.map((a) => {
-                        return (
-                          
-                            <div key={a.id}>
-                                {a.id},{a.Name},{a.TotalAmount},{a.Totalquantity}
-                                <Link to={`/admin-view/${a.id}`}> <button > view  </button></Link>
-                            </div>
-                        );
-                    })}
+                    <table>
+
+                        <th>S.NO</th>
+                        <th>NAME</th>
+                        <th>TotalAmount</th>
+                        <th>Totalquantity</th>
+                        <th>VIEW</th>
+
+
+
+                        {this.props.users.map((order) => {
+                            return (
+
+
+                                <tr>
+                                    <td>{order.id}</td>
+                                    <td>{order.Name}</td>
+                                    <td>{order.TotalAmount}</td>
+                                    <td>{order.Totalquantity}</td>
+                                    <td>{<Link to={`/admin-view/${order.id}`}> <button className="view-buttuon" > view  </button></Link>}</td>
+                                </tr>
+
+
+
+
+                            );
+                        })}
+                    </table>
                 </ul>
+
             </div>
         );
     }
