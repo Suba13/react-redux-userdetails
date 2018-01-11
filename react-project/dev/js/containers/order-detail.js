@@ -20,12 +20,23 @@ class Order_detail extends Component {
          );
      };
     render() {
+        console.log("order-detail");
         return (
             <div>
                 {console.log(this.props.user)}
-                 {/* <h2>USERNAME:{this.props.user.Name}</h2>
+                  {/* <h2>USERNAME:{this.props.user.Name}</h2>
                 <h3>QUANTITY: {this.props.user.Totalquantity}</h3>
-                <h3>TOTALAMOUNT: {this.props.user.TotalAmount}</h3> */}
+                <h3>TOTALAMOUNT: {this.props.user.TotalAmount}</h3> 
+                <ul>
+                    {this.props.user.map((user) => {
+                        return (
+                            <div>
+                         <h2>ITEMNAME:{Orderitems.item}</h2>
+                <h3>QUANTITY: {Orderitems.quantity}</h3>
+                            </div>
+                        );
+                    })}
+                </ul> */}
                 <Link to="/" >Back</Link>
                 </div>
         );
