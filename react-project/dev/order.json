@@ -1,0 +1,64 @@
+{
+    "Orders": [
+      {
+        "id": 1,
+        "Name": "rakesh",
+         "TotalAmount":120,
+     "Totalquantity":5,
+         "Orderitems":[
+     {
+     
+           "item":"burger",
+           "quantity":2,
+           "price":60  	
+     
+     }, {
+     
+           "item":"milk",
+           "quantity":"2",
+           "price":"60"  	
+     
+     }
+     
+     
+     ]
+      },
+      
+   {
+        "id": 2,
+        "Name": "Nirmal",
+         "TotalAmount":90,
+     "Totalquantity":10,
+         "Orderitems":[
+     {           
+     
+           "item":"milk_shake",
+           "quantity":3,
+           "price":90  	
+     
+     }
+     
+     
+     ]
+   },
+   
+   {
+       "id": 3,
+        "Name": "Tyson",
+         "TotalAmount":100,
+     "Totalquantity":3,
+         "Orderitems":[
+     {
+     
+           "item":"Pizza",
+           "quantity":1,
+           "price":100  	
+     
+     }
+     
+     
+     ]
+   }
+   
+   ]
+   } 
