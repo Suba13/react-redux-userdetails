@@ -1,0 +1,16 @@
+body {
+  /*background: green;*/
+}
+
+p {
+  display: flex;
+  font-size: responsive;
+  color:red;
+}
+.grid1{
+  width: 100%;
+  
+}
+.grid1 div{
+  
+}
