@@ -1,0 +1,72 @@
+const  products=[
+  {
+    idno:"01",
+    name:"men",
+    price:1000
+  },
+  {
+    idno:"02",
+    name:"women",
+    price:5000},
+  {
+    idno:"03",
+    name:"baby",
+    price:2000}];
+
+
+const modifyproduct=(state,action)=>{
+  switch(action.type){
+    case "modify":
+      const Modify=state.map((n)=>{
+      if(n.idno==action.payload.idno){
+       return{...action.payload};  
+       }
+        return n;
+      })
+      console.log(Modify);
+      
+    case "delete":
+          const del = state.filter(item => {
+        return item.idno !== action.payload.idno
+})
+
+       console.log(del);
+  }
+}
+
+const action1={
+  type:"modify",
+  payload:{idno:"03",name:"baby",price:7000}
+};
+const action2 ={
+   type:"delete",
+  payload:{idno:"01",name:"men",price:1000},
+}; 
+modifyproduct(products,action1);
+modifyproduct(products,action2);
+
+Output:
+Modify:
+[[object Object] {
+  idno: "01",
+  name: "men",
+  price: 1000
+}, [object Object] {
+  idno: "02",
+  name: "women",
+  price: 5000
+}, [object Object] {
+  idno: "03",
+  name: "baby",
+  price: 7000
+}]
+delete:
+[[object Object] {
+  idno: "02",
+  name: "women",
+  price: 5000
+}, [object Object] {
+  idno: "03",
+  name: "baby",
+  price: 2000
+}]
