@@ -1,0 +1,152 @@
+* *:not(input):not(textarea):not(select){
+	background-color:rgba(0, 0, 255, 0.1);
+}
+
+.content1,.content2{
+	width:calc(99.9% * 1/4 - (30px - 30px * 1/4));
+	height:45px;
+	margin-bottom: 5px;
+	color: red;
+}
+
+.content1:nth-child(1n),.content2:nth-child(1n){
+	float:left;
+	margin-right:30px;
+	clear:none;
+}
+
+.content1:last-child,.content2:last-child{
+	margin-right:0;
+}
+
+.content1:nth-child(3n),.content2:nth-child(3n){
+	margin-right:0;
+	float:right;
+}
+
+.content1:nth-child(3n + 1),.content2:nth-child(3n + 1){
+	clear:both;
+}
+.content3{
+	width:calc(99.9% * 1/2 - (30px - 30px * 1/2));
+	margin-bottom: 5px;
+	height:45px;
+}
+.content3:nth-child(1n){
+	float:left;
+	margin-right:30px;
+	clear:none;
+}
+.content3:last-child{
+	margin-right:0;
+}
+.content3:nth-child(3n){
+	margin-right:0;
+	float:right;
+}
+.content3:nth-child(3n + 1){
+	clear:both;
+}
+@media (min-width: 900px) {
+    .content div {
+        width: calc(99.9% * 1/6 - (30px - 30px * 1/6));
+    }
+    .content div:nth-child(1n) {
+        float: left;
+        margin-right: 30px;
+        clear: none;
+    }
+    .content div:last-child {
+        margin-right: 0;
+    }
+    .content div:nth-child(6n) {
+        margin-right: 0;
+        float: right;
+    }
+    .content div:nth-child(6n + 1) {
+        clear: both;
+    }
+}
+@media (max-width: 500px) {
+    .content div {
+        width: calc(99.9% * 1/1 - (30px - 30px * 1/1));
+    }
+    .content div:nth-child(1n) {
+        float: left;
+        margin-right: 30px;
+        clear: none;
+    }
+    .content div:last-child {
+        margin-right: 0;
+    }
+    .content div:nth-child(1n) {
+        margin-right: 0;
+        float: right;
+    }
+    .content div:nth-child(1n + 1) {
+        clear: both;
+    }
+}
+
+.upper,.lower{
+	width:calc(99.9% * 1/1 - (30px - 30px * 1/1));
+	height:45px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	color: red;
+	
+}
+
+.upper:nth-child(1n),.lower:nth-child(1n){
+	float:left;
+	margin-right:30px;
+	clear:none;
+	
+}
+
+.upper:last-child,.lower:last-child{
+	margin-right:0;
+	
+}
+
+.upper:nth-child(1n),.lower:nth-child(1n){
+	margin-right:0;
+	float:right;
+	
+}
+
+.upper:nth-child(1n + 1),.lower:nth-child(1n + 1){
+	clear:both;
+	
+}
+
+.lower1,.lower2,.upper1,.upper2{
+	width:calc(99.9% * 1/2 - (30px - 30px * 1/2));
+	margin-bottom: 5px;
+	margin-top: 5px;
+	height:35px;
+	
+}
+
+.lower1:nth-child(1n),.lower2:nth-child(1n),.upper1:nth-child(1n),.upper2:nth-child(1n){
+	float:left;
+	margin-right:30px;
+	clear:none;
+	
+}
+
+.lower1:last-child,.lower2:last-child,.upper1:last-child,.upper2:last-child{
+	margin-right:0;
+	
+}
+
+.lower1:nth-child(2n),.lower2:nth-child(2n),.upper1:nth-child(2n),.upper2:nth-child(2n){
+	margin-right:0;
+	float:right;
+	
+}
+
+.lower1:nth-child(2n + 1),.lower2:nth-child(2n + 1),.upper1:nth-child(2n + 1),.upper2:nth-child(2n + 1){
+	clear:both;
+	
+}
