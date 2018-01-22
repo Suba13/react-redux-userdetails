@@ -150,3 +150,66 @@
 	clear:both;
 	
 }
+.leftside{
+	width:calc(99.9% * 1/2 - (30px - 30px * 1/2));
+	margin-bottom: 5px;
+	margin-top: 5px;
+	height:100px;
+}
+.leftside:nth-child(1n){
+	float:left;
+	margin-right:30px;
+	clear:none;
+}
+.leftside:last-child{
+	margin-right:0;
+}
+.leftside:nth-child(2n){
+	margin-right:0;
+	float:right;
+}
+.leftside:nth-child(2n + 1){
+	clear:both;
+}
+.rightside1{
+	width:calc(99.9% * 1/2 - (30px - 30px * 1/2));
+	margin-bottom: 5px;
+	margin-top: 5px;
+	height:40px;
+}
+.rightside1:nth-child(1n){
+	float:left;
+	margin-right:30px;
+	clear:none;
+}
+.rightside1:last-child{
+	margin-right:0;
+}
+.rightside1:nth-child(2n){
+	margin-right:0;
+	float:right;
+}
+.rightside1:nth-child(2n + 1){
+	clear:both;
+}
+.rightside2{
+	width:calc(99.9% * 1/1 - (30px - 30px * 1/1));
+	margin-bottom: 5px;
+	margin-top: 40px;
+	height:40px;
+}
+.rightside2:nth-child(1n){
+	float:left;
+	margin-right:30px;
+	clear:none;
+}
+.rightside2:last-child{
+	margin-right:0;
+}
+.rightside2:nth-child(1n){
+	margin-right:0;
+	float:right;
+}
+.rightside2:nth-child(1n + 1){
+	clear:both;
+}
