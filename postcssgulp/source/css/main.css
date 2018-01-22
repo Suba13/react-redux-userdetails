@@ -1,17 +1,16 @@
-*{
-	lost-utility:edit;
-}
 
 .content1,.content2{
 	lost-column:1/4 3;
 	height:45px;
 	margin-bottom: 5px;
 	color: red;
+	background-color: green;
 }
 .content3{
 	lost-column:1/2 3;
 	margin-bottom: 5px;
 	height:45px;
+	background-color: green;
 }
 @media (min-width: 900px) {
     .content div {
@@ -30,6 +29,7 @@
 	margin-bottom: 5px;
 	margin-top: 5px;
 	color: red;
+	background-color: blue;
 	
 }
 
@@ -38,6 +38,7 @@
 	margin-bottom: 5px;
 	margin-top: 5px;
 	height:35px;
+	background-color: lightblue;
 	
 }
 .leftside{
@@ -45,6 +46,7 @@
 	margin-bottom: 5px;
 	margin-top: 5px;
 	height:100px;
+	background-color: yellow;
 }
 .rightside1{
 	lost-column:1/2 ;
@@ -57,4 +59,37 @@
 	margin-bottom: 5px;
 	margin-top: 40px;
 	height:40px;
+}
+.rightside{
+	lost-column:1/2 ;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	height:100px;
+	background-color:black;
+}
+
+@media (max-width: 500px) {
+    .first,.leftside,.rightside,.rightside1,.rightside2 {
+        lost-column: 1/1;
+    }
+}
+
+@media (max-width: 500px) {
+    .second div {
+        lost-column: 1/1;
+    }
+}
+@media (max-width: 500px) {
+    .third div {
+        lost-column: 1/1;
+        margin-top: 300px;
+        
+    }
+}
+@media (max-width: 500px) {
+    .4th,.inside div {
+        lost-column: 1/1;
+        margin-top: 300px;
+        margin-bottom: 40px;
+    }
 }
