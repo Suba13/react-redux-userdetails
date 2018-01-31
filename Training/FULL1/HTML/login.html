@@ -1,0 +1,33 @@
+<section class="container login_body" ng-controller="login-page">
+
+         <!-- Top content -->
+                    <section class="row ">
+                        <section class=" col-lg-5 col-sm-6 col-sm-offset-3 form-box">
+                          <section class="form-top">
+                            <section class="form-top-left">
+                              <a href="http://www.photon.in" title="photon website" ><img src="IMAGES/logo.png" class="img-responsive"></a>
+                            </section>
+                          </section>
+                          <section class="form-bottom">
+                             <form role="form" action="" method="post" class="login-form">
+                                <section class="control-group">
+                                    <section class="form-group">
+                                          <input type="text" ng-model="login_username" onkeypress='return event.charCode >= 65 && event.charCode <= 122' name="form-username" placeholder="Username" class="form-username form-control" id="form-username" required>
+                                          <label class="login-field-icon fui-user" for="login-name"></label>
+                                    </section>
+                                </section>
+                                <section class="control-group">
+                                      <section class="form-group">
+                                         <input type="password" ng-model="login_password" name="form-password" placeholder="Password" class="form-password form-control" id="form-password" required>                     
+                                      </section>
+                               </section>
+                               <a href="#!/forget_pswd" class="forget-paswd-link">Forgot password ?</a>
+                               <button type="submit" ng-click="validate()" class="butn" id="submit">
+                                    <strong>Sign in</strong>
+                               </button>
+                            </form>
+                          </section>
+                        </section>
+                    </section>
+  </section>
+

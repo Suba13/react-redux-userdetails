@@ -1,0 +1,37 @@
+ <!DOCTYPE html>
+<html>
+<head> 
+</head>
+<body>
+<input type="text"id="input"/>
+<button name="Ans"type="submit" onclick="main()">Output</button>
+<script>
+function checkBrackets(str){
+    var count = 0;
+    var len=str.length;
+    if(str[0]==')'||(str[len]=='('))
+  {
+   	return false;
+  }
+  function checkBrackets(str){
+    var count = 0;
+    for(var i in str){   
+        if(str[i] == '('){
+            count ++;
+        } else if(str[i] == ')') {
+            count --;
+        }  
+        
+        if (count < 0) return false;
+    }
+        if(count > 0) return false;
+    return true;
+}
+function main(){
+	var exp=document.getElementById('input').value;
+	var str=exp.split("");
+}
+</script>
+</body>
+</html>
+

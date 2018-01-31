@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:page>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1; charset=utf-8">
+		<meta http-equiv="no-cache">
+		<meta http-equiv="expires" content="-1">
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<meta name="viewport"
+			content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+
+		<link rel="stylesheet" href="../css/home.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		<!-- Main Library -->
+
+		<script src="../lib/signals.js"></script>
+		<script src="../lib/require.js"></script>
+		<script src="../lib/jquery-1.7.2.min.js"></script>
+		<script src="../lib/handlebars-1.0.0.beta.6.js"></script>
+		<script src="../lib/underscore.js"></script>
+		
+		
+		<script src="../js/framework/Class.js"></script>
+		<script src="../js/framework/Base.js"></script>
+		<script src="../js/framework/Widget.js"></script>
+		<script src="../js/framework/TemplateProvider.js"></script>
+		<script src="../js/framework/WidgetWithTemplate.js"></script>
+		<script src="../js/framework/AnimationProvider.js"></script>
+		<script src="../js/framework/NavigationController.js"></script>
+
+		
+		<!-- Bootstrap -->
+		<script src="../js/Bootstrap.js"></script>
+		
+		<!-- Widget -->
+		<script src="../js/widget/HomePage.js"></script>
+		<script src="../js/widget/Scripts.js"></script>
+		
+		<script>
+     $(function() {
+         var myVariable = { name: 'pramono', lastName: 'tri suharso', score: 6 };
+         request(showDetail);
+
+         function showDetail(response) {
+             if (response) {
+                 var projectName = response.projectName;
+                 var projectCode = response.projectId
+                 $('#project-name-value').text(projectName);
+                 $('#project-code-value').text(projectCode);
+             }
+
+         }
+
+
+         function checkScore(score, callback) {
+             var message;
+             if (score > 5) {
+                 callback("this is good");
+             } else {
+                 callback("this is not good");
+             }
+             J
+         }
+
+         function request(successCallBack) {
+             $.ajax({
+                 type: 'GET',
+                 url: 'http://172.16.7.62:8090/company-dashboard/staffing?searchKey=10372&&searchType=projectId',
+                 contentType: "application/json",
+                 data: '',
+                 timeout: 500000,
+                 header: {
+                     'Access-Control-Allow-Headers': 'x-requested-with',
+                     'Accept': 'application/json',
+                     'Content-Type': 'application/json',
+                     'Access-Control-Allow-Origin': '*',
+                     'Access-Control-Allow-Methods': 'PUT, DELETE, POST, GET'
+                 },
+                 error: function(jqXHR) {
+                     console.log("Error Cannot get repsonse = ", jqXHR)
+                 },
+                 success: function(data, status, jqXHR) {
+                     successCallBack(data);
+                 }
+             });
+         }
+
+         function showAlert(msg) {
+             alert("Result for the score = " + msg);
+         }
+
+     });
+</script>
+
+
+	</head>
+	
+	<body>
+	
+		<widget:page></widget:page>
+	</body>
+</html>

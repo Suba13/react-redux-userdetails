@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>React</title>
+     <script src="../js/react.min.js"></script>
+     <script src="../js/react.dom.min.js"></script>
+     <script src="../js/browser.min.js"></script>
+    </head>
+    <body>
+        <div id="example"></div>
+        <script type="text/babel">
+        var a=React.createClass({
+            render:function(){
+                return(
+
+               <div>
+                <h3>this is a component</h3>
+                <p>This is a simple react js examples.component is created using createclass</p>);
+               </div>
+            }
+        });
+        ReactDOM.render(<h1>suba</h1>,document.getElementById('example'));
+        </script>
+    </body>
+</html>

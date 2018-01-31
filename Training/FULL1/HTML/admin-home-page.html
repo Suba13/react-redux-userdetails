@@ -1,0 +1,152 @@
+<section class="container best_worst_project" ng-controller="score-graph" ng-init='load()'>
+  <section class="row">
+    <section class="col-lg-12  col-sm-12  col-xs-12 ">
+  
+      <section class="col-lg-6 col-sm-6 col-xs-12 dropdown_addnewproject">
+         <section class="row select_dropdown">
+            <select class='form_search' ng-model="select_down" ng-change="go(select_down)" ng-dropdown>
+                    <option value='admin-all-project'>All Projects</option>
+                    <option  value='consolitated'>Consolidated Report</option>
+            </select>
+           </section>     
+
+           <section class="row">
+            <button  value ="Add New Projects" ng-click="add_new_project()"  class="add_projects" >Add New Project</button>
+          </section>
+ 
+       </section>
+       <section class="col-lg-4 col-sm-4 col-xs-12 score-graph">         
+                <section id="chartContainer" style="height: 250px; width: 100%;" ></section>                
+      </section>
+    </section>
+  </section> 
+
+
+
+  <section class="best_least_table" >
+        <!-- best project content-->
+      <section class="col-lg-12 col-xs-12 col-sm-12 Project_Table">
+            <span class="glyphicon glyphicon-thumbs-up"></span>
+            <label>Best Projects</label>
+      </section> 
+
+
+        <!--  best project table  content-->
+
+   <section class="col-lg-12 col-sm-12 col-xs-12 all-project-table-margin"> 
+     <table class="table hidden-xs best_tbl" ng-controller="best_worst_contrl">
+        <thead>
+              <tr class="heading-row-custom">
+                 <th class="best_table-content">Project code</th>
+                 <th class="best_table-content">Project name</th>
+                 <th class="best_table-content">Reviewer</th>
+                 <th class="best_table-content">Reviewed date</th>
+                 <th class="best_table-content">Reviewe score</th>
+                 <th class="best_table-content">Status</th>
+              </tr> 
+         </thead> 
+         <tbody>    
+              <tr ng-repeat="x in best_project">
+                <td class="best_table-content">{{x.code}}</td>
+                <td class="best_table-content"><a title="best project name" href="#!/admin_second_page">{{x.name}}</a></td>
+                <td class="best_table-content">{{x.reviewer}}</td>
+                <td class="best_table-content">{{x.reviewed_date}}</td>
+                 <td class="best_table-content">{{x.reviewscore}}</td>
+                  <td class="best_table-content">{{x.status}}</td>
+              </tr>
+       </tbody>
+    </table>
+    <table class="table best_tbl hidden-sm hidden-md hidden-lg " ng-controller="best_worst_contrl" >
+        <tbody  ng-repeat="x in best_project ">
+                                    <tr>
+                                        <th class="heading-row-custom">Project code</th>
+                                        <td class="all_project_table-content">{{x.code}}</td>
+                                    </tr>
+                                    <tr >
+                                        <th class="heading-row-custom">Project name</th>
+                                        <td class="all_project_table-content"><a title="project_name" href="#!/admin_second_page">{{x.name}}</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="heading-row-custom">Reviewer</th>
+                                        <td class="all_project_table-content">{{x.reviewer}}</td>
+                                    </tr>
+                                    <tr>
+                                          <th class="heading-row-custom">Reviewed date</th>
+                                          <td class="all_project_table-content">{{x.reviewed_date}}</td>
+                                    </tr>
+                                    <tr>
+                                          <th class="heading-row-custom">Score</th>
+                                          <td class="all_project_table-content">{{x.reviewscore}}</td>
+                                    </tr>
+                                    <tr>
+                                          <th class="heading-row-custom">Status</th>   
+                                          <td class="all_project_table-content">{{x.status}}</td>
+                                    </tr>
+        </tbody>
+      </table>
+   </section>
+
+
+
+   
+        <!-- least project content-->
+
+
+   <section class="col-lg-12 col-xs-12 col-sm-12 Project_Table">
+            <span class="glyphicon glyphicon-thumbs-down"></span>
+            <label>Least Projects</label>
+   </section>
+    <section class="col-lg-12 col-xs-12 col-sm-12 all-project-table-margin" >
+            <table  class="table hidden-xs least_tbl" ng-controller="best_worst_contrl">
+             <thead>
+                <tr class="heading-row-custom">
+                    <th class="least_table-content">Project code</th>
+                    <th class="least_table-content">Project name</th>
+                    <th class="least_table-content">Reviewer</th>
+                    <th class="least_table-content">Reviewed date</th>
+                    <th class="least_table-content">Reviewe score</th>
+                    <th class="least_table-content">Status</th>
+                </tr>
+              </thead> 
+              <tbody>    
+                <tr ng-repeat="y in worst_project">
+                        <td class="least_table-content">{{y.code}}</td>
+                        <td class="least_table-content"><a title="worst project name" href="#!/admin_second_page">{{y.name}}</a></td>                       
+                        <td class="least_table-content">{{y.reviewer}}</td>
+                        <td class="least_table-content">{{y.reviewed_date}}</td>
+                        <td class="least_table-content">{{y.reviewscore}}</td>
+                         <td class="least_table-content">{{y.status}}</td>
+                 </tr>
+             </tbody>
+            </table>
+            <table class="table least_tbl hidden-lg hidden-md hidden-sm"  ng-controller="best_worst_contrl">
+              <tbody  ng-repeat="y in worst_project ">
+                                    <tr>
+                                        <th class="heading-row-custom">Project code</th>
+                                        <td class="all_project_table-content">{{y.code}}</td>
+                                    </tr>
+                                    <tr >
+                                        <th class="heading-row-custom">Project name</th>
+                                        <td class="all_project_table-content"><a title="project_name" href="#!/admin_second_page">{{y.name}}</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="heading-row-custom">Reviewer</th>
+                                        <td class="all_project_table-content">{{y.reviewer}}</td>
+                                    </tr>
+                                    <tr>
+                                          <th class="heading-row-custom">Reviewed date</th>
+                                          <td class="all_project_table-content">{{y.reviewed_date}}</td>
+                                    </tr>
+                                    <tr>
+                                          <th class="heading-row-custom">Score</th>
+                                          <td class="all_project_table-content">{{y.reviewscore}}</td>
+                                    </tr>
+                                    <tr>
+                                          <th class="heading-row-custom">Status</th>   
+                                          <td class="all_project_table-content">{{y.status}}</td>
+                                    </tr>
+               </tbody>
+            </table>
+        </section>
+  </section>
+  </section>    

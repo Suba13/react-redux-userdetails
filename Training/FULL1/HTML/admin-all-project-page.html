@@ -1,0 +1,177 @@
+<section class="container" ng-controller="contrl">
+
+      <section class="col-lg-6 col-sm-6 col-xs-12 ">
+         <section class="row select_dropdown">
+            <select class='form_search' ng-model="select_down" ng-change="go(select_down)" ng-dropdown>
+                    <option value='admin-home'>Best and Worst Project List</option>
+                    <option  value='consolitated'>Consolidated Report</option>
+            </select>
+           </section>  
+       </section>
+
+
+<!-- date filter  content-->
+
+  <section class="col-lg-12 col-sm-12 col-xs-12 datefilter">
+   <form> 
+      <section class= "row">
+        <section class="col-lg-3 col-sm-3  col-xs-6 start_date">
+                <label>Choose Start Date:</label><br>
+                <input type="date" id="str_date">
+        </section>
+        <section class="col-lg-3 col-sm-3  col-xs-6 end_date">
+                <label>Choose End Date:</label><br>
+                <input type="date" id="end_date">
+        </section>
+        <section class="col-lg-3 col-sm-3  col-xs-6">
+                <label>Delivery Manager:</label><br>
+                  <div>
+                      <input type="text" class="delivery-manager-box" ng-model="Deliname"  required/>
+                      <button class="fa fa-plus admin-home-page-add-btn" ng-click="add_delivery_manager(); Deliname=null;" ng-disabled="!(!!Deliname)" ></button><br><br>
+                  </div>
+                  <div ng-repeat="x in deli_manager">
+                              <input type="text"  class="delivery-manager-box" VALUE="{{x.name}}" ng-readonly="deli_manager.length>0" />
+                              <span ng-hide="deli_manager.length == 0">
+                                      <button class="fa fa-minus admin-home-page-minus-btn"   ng-click="deli_manager.splice($index, 1)"></button>
+                              </span><br><br>
+                  </div>
+        </section>
+        <section class="col-lg-3 col-sm-3 col-xs-6">
+                <label>Accounts:</label><br>
+                <div>
+                      <input type="text" class="delivery-manager-box" ng-model="accountsname" required/>
+                      <button class="fa fa-plus admin-home-page-add-btn" ng-click="add_accounts(); accountsname=null;" ng-disabled="!(!!accountsname)" ></button><br><br>
+                  </div>
+                  <div ng-repeat="x in account_name">
+                              <input type="text"  class="delivery-manager-box" VALUE="{{x.name}}" ng-readonly="account_name.length>0" />
+                              <span ng-hide="account_name.length == 0">
+                                      <button class="fa fa-minus admin-home-page-minus-btn"   ng-click="account_name.splice($index, 1)"></button>
+                              </span><br><br>
+                  </div>
+        </section>
+      </section>
+      <section class= "row">
+         <section class="col-lg-1 col-sm-2  col-xs-4 apply-bttn"> 
+                <input type="button" onclick="" value="Apply" class="app_but">
+         </section>
+         <section class="col-lg-1 col-sm-2 col-xs-4 reset-bttn">
+               <input type="button" value="Reset" onclick="reset_date()" class="rst_but">
+         </section>
+      </section>
+   </form>
+  </section>
+
+
+         <!--project table  content-->
+
+      <section class="col-lg-12 col-xs-12 col-sm-12 Project_Table">
+            <span class="glyphicon glyphicon-list-alt"></span>
+            <label>List of Projects</label>
+      </section>
+
+
+        <section class="col-lg-12 col-xs-12 col-sm-12 all-project-table-margin" >
+             <section class="col-lg-3 col-sm-3 col-xs-10 search-bar">
+          
+               <input type="text" ng-model="search" class="form-control" placeholder="Type your search keyword..">
+              </section>
+                   <table class="table hidden-xs" >
+                                <thead>
+                                    <tr class="heading-row-custom">
+                                       <th class="all_project_table-content ">Project code</th>
+                                       <th class="all_project_table-content">Project name</th>
+                                       <th class="all_project_table-content">Reviewer</th>
+                                       <th class="all_project_table-content">Reviewed date</th>
+                                       <th class="all_project_table-content">Score</th>
+                                       <th class="all_project_table-content">Status</th>                            
+                                    </tr>
+                                </thead>
+                                
+                                <tbody ng-show="!search">
+                                    <tr class="odd gradeX" ng-repeat="x  in range(startIndex-1,endIndex-1)">
+                                    <td class="all_project_table-content">{{project[x].code}}</td>
+                                    <td class="all_project_table-content"><a title="project_name" href="#!/admin_second_page">{{project[x].name}}</a></td>
+                                    <td class="all_project_table-content">{{project[x].reviewer}}</td>
+                                    <td class="all_project_table-content">{{project[x].review_date}}</td>
+                                    <td class="all_project_table-content">{{project[x].score}}</td>
+                                    <td class="all_project_table-content">{{project[x].status}}</td>
+                                    </tr>
+                                </tbody>
+                                <tbody ng-hide="!search">
+                                    <tr class="odd gradeX" ng-repeat="x  in project|filter:search">
+                                    <td class="all_project_table-content">{{x.code}}</td>
+                                    <td class="all_project_table-content"><a title="project_name" href="#!/admin_second_page">{{x.name}}</a></td>
+                                    <td class="all_project_table-content">{{x.reviewer}}</td>
+                                    <td class="all_project_table-content">{{x.review_date}}</td>
+                                    <td class="all_project_table-content">{{x.score}}</td>
+                                    <td class="all_project_table-content">{{x.status}}</td>
+                                    </tr>
+                                </tbody>
+                    </table>
+                    <table class="table hidden-lg hidden-sm hidden-md" >       
+                                <tbody  ng-show="!search" ng-repeat="x  in range(startIndex-1,endIndex-1)">
+                                    <tr class="odd gradeX">
+                                        <th class="heading-row-custom">Project code</th>
+                                        <td class="all_project_table-content">{{project[x].code}}</td>
+                                    </tr>
+                                    <tr >
+                                        <th class="heading-row-custom">Project name</th>
+                                        <td class="all_project_table-content"><a title="project_name" href="#!/admin_second_page">{{project[x].name}}</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="heading-row-custom">Reviewer</th>
+                                        <td class="all_project_table-content">{{project[x].reviewer}}</td>
+                                    </tr>
+                                    <tr>
+                                          <th class="heading-row-custom">Reviewed date</th>
+                                          <td class="all_project_table-content">{{project[x].review_date}}</td>
+                                    </tr>
+                                    <tr>
+                                          <th class="heading-row-custom">Score</th>
+                                          <td class="all_project_table-content">{{project[x].score}}</td>
+                                    </tr>
+                                    <tr>
+                                          <th class="heading-row-custom">Status</th>   
+                                          <td class="all_project_table-content">{{project[x].status}}</td>
+                                    </tr>
+                                </tbody>
+                                <tbody ng-hide="!search" ng-repeat="x in project |filter:search">
+                                    <tr class="odd gradeX">
+                                        <th class="heading-row-custom">Project code</th>
+                                        <td class="all_project_table-content">{{x.code}}</td>
+                                    </tr>
+                                    <tr >
+                                        <th class="heading-row-custom">Project name</th>
+                                        <td class="all_project_table-content"><a title="project_name" href="#!/admin_second_page">{{x.name}}</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="heading-row-custom">Reviewer</th>
+                                        <td class="all_project_table-content">{{x.reviewer}}</td>
+                                    </tr>
+                                    <tr>
+                                          <th class="heading-row-custom">Reviewed date</th>
+                                          <td class="all_project_table-content">{{x.review_date}}</td>
+                                    </tr>
+                                    <tr>
+                                          <th class="heading-row-custom">Score</th>
+                                          <td class="all_project_table-content">{{x.score}}</td>
+                                    </tr>
+                                    <tr>
+                                          <th class="heading-row-custom">Status</th>   
+                                          <td class="all_project_table-content">{{x.status}}</td>
+                                    </tr>
+                                </tbody>
+                    </table>
+                    <section  class="col-lg-12 col-xs-12 col-sm-12 table_pagination " ng-show="!search">
+                    <nav aria-label="Page navigation example">
+                  <ul class="pagination">
+                        <li class="page-item"><button  ng-click="previous()" class="page-link btn  pagination-button " ng-disabled="startIndex == 1 && endIndex == 10">Previous</button>
+                        <li class="page-item" ng-repeat = "page in noOfPages | limitTo: 10 track by $index" ng-click="loadRecordsPerPage($index+1)"><button class="page-link btn pagination-button ">{{$index + 1}}</button>
+                        <li class="page-item"><button  ng-click="change()" ng-disabled="endIndex == totalpages " class="page-link btn  pagination-button ">Next</button>
+                  </ul>
+            </nav>
+           </section>
+           </section>
+
+  </section>
+ <script src="JS/filter_Date.js" > </script>

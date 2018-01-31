@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body background="7wonder.jpg">
+<center>
+<div><label><b>Username</b></label></div>
+<div><input type="text" id="box3" placeholder="Enter the username:"/></div>
+<div><label value="Password"><b>Password</b></label></div>
+<div><input type="password" id="box4" placeholder="Enter the password"/></div>
+<div>
+<button type="button" onclick="store()">Submit</button>
+</div>
+<script type="text/javascript">
+
+function store(){
+var existEntries = JSON.parse(localStorage.getItem("allEntries"));
+if (existEntries == null){existEntries ={};}
+var suser=document.getElementById('box3').value;
+var spass=document.getElementById('box4').value;
+if((suser=='')||(spass==''))
+    {
+    alert("enter the valid password and username");
+    }
+    else {
+    		if (null != existEntries[suser]) {
+    			alert("username already exists");
+    		}
+    		else{
+			existEntries[suser]=spass;
+			localStorage.setItem("allEntries",JSON.stringify(existEntries));
+    		alert("registered!!")
+			location.href='local.html';
+		      }
+	    }
+}
+</script>
+</center>
+</body>
+</html>

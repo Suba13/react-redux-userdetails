@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+         <title>project scorecard | reviewer page</title>
+         <meta name="description" content="score-board">
+         <meta name="author" content="photon-employee">
+         <meta name="keyword" content="html,css,bootstrap,project">
+         <meta name="viewport" content="width=device-width,initial-scale=1.0">
+         <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+         <link rel="stylesheet" href="../CSS/styles.css">
+         <script src="../VENDOR_JS/jquery.min.js"></script>
+         <script src="../VENDOR_JS/bootstrap.min.js"></script>
+         <script src="../VENDOR_JS/angular.min.js"></script>  
+         <script src="../VENDOR_JS/canvasjs.min.js"></script>
+         <script src="../JS/score-graph.js"></script>        
+         <script src="../JS/question.js"></script>
+         <script src="../JS/reviewer_info.js"></script>
+         <script src="../JS/save_question.js"></script>
+         <script src="../JS/logout_second.js"></script> 
+</head>
+<body ng-app="Myapp">
+  <section class="container">
+
+  <!-- header content-->
+   <header>
+          <section class="row photon-header">
+                <section class="col-lg-10  col-sm-10  col-xs-7">
+                          <h1><a href="http://www.photon.in"  title="photon-logo"><img class="navbar-brand" src="../IMAGES/logo.png" alt="photon View"></a></h1>
+                </section>   
+                <section class="col-lg-2 col-sm-2 col-xs-5">
+                     <a href="index.html" title="logout-button" class="btn  btn-lg logout">
+                   <span class="glyphicon glyphicon-log-out"></span> Log out </a>
+                </section>      
+           </section>
+    </header>
+
+<!-- name of employee  content-->
+
+
+    <section class=" col-lg-12  col-sm-12 col-xs-12 User_name_bg" ng-controller="name">
+        <section class="User-Name">
+            Reviewer:{{reviewer_name}}
+        </section>
+    </section>
+
+ <!-- date filter content-->
+
+
+
+   <section class="col-lg-12 col-sm-12 col-xs-12 datefilter">
+     <form id="myForm">   
+            <section class="col-lg-4 col-sm-4 col-xs-12 start_date">
+                  <label>Choose Start Review Date:</label><br>
+                  <input type="date" id="str_date">
+            </section>
+            <section class="col-lg-4 col-sm-4 col-xs-12 end_date">
+                 <label>Choose end Review Date:</label><br>
+                 <input type="date" id="end_date">
+            </section>
+            <section class="col-lg-2 col-sm-2 col-xs-6 apply-bttn"> 
+                  <input type="button" onclick="" value="Apply" class="app_but"></input>
+            </section>
+            <section class="col-lg-2 col-sm-2 col-xs-6 reset-bttn">
+                  <input type="reset" value="Reset" class="rst_but"></input>
+            </section>
+    </form>
+  </section>
+
+
+
+
+  <!-- project name & graph content-->
+
+
+
+  <section class="col-lg-12 col-sm-12 col-xs-12">
+      <section class="col-lg-12 col-sm-12 col-xs-12 score-card-project-name-container" id="show_project_name" style="display: block;">
+             <section class="score-card-project-name-icon"></section>
+             <section class="score-card-project-name-label" ng-controller="Project_heading">{{pcode}}{{pname}}</section>
+      </section>
+      <section class="col-lg-7 col-sm-7 col-xs-12 score-interpretation">    
+         <table class="scoring-interpret-table" >
+              <tr class="interpre-heading-row">
+                 <th class="interpre-heading-row-score">Score Name</th>
+                 <th class="interpre-heading-row">Scoring Interpretation</th>
+              </tr>
+              <tr>
+                 <td class="interpre-row">0-4</td>
+                 <td class="interpre-row">Project is managed by pure luck</td>
+              </tr>
+              <tr>
+                <td class="interpre-row">4-6</td>
+                <td class="interpre-row">Impending doom if not corrected. Project doesn't follow the process. It needs many corrections</td>
+              </tr> 
+              <tr>
+                  <td class="interpre-row">6-8</td>
+                  <td class="interpre-row">Meet expectation</td>
+              </tr>    
+              <tr>
+                <td class="interpre-row">8-9</td>
+                <td class="interpre-row">Exceed expectation</td>
+              </tr>  
+              <tr>
+                <td class="interpre-row">9+</td>
+                <td class="interpre-row">Exceptional</td>
+              </tr>
+          </table>
+      </section>
+      <section class="col-lg-5 col-sm-5 col-xs-12">
+         <section class="col-lg-12 col-sm-12 col-xs-12 reviewer-details">
+             <table class="table-reviewer-details">  
+              <tr class="table-reviewer-details">
+                  <td class="table-reviewer-details"><img src="../IMAGES/monitor.png" alt="reviewer-symbol">
+                  </td>
+                  <td class="table-reviewer-details">Reviewer:</td>
+                  <td class="table-reviewer-details"> Suba Dharshini</td>
+              </tr>
+              <tr class="table-reviewer-details">
+                  <td class="table-reviewer-details"><img src="../IMAGES/review_date.png" alt="review-date">
+                  </td>
+                  <td class="table-reviewer-details">Review Date:</td>
+                  <td class="table-reviewer-details" ng-controller="contrl">{{review_date}}</td>
+              </tr>
+              <tr class="table-reviewer-details">
+                  <td class="table-reviewer-details"><img src="../IMAGES/score.png" alt="project-score">
+                  </td>
+                  <td class="table-reviewer-details">Review Score:</td>
+                  <td class="table-reviewer-details" ng-controller="contrl">{{score}}</td>
+              </tr>  
+            </table>
+        </section>
+        <section class="col-lg-11 col-sm-11 col-xs-12 score-graph">
+                <section id="chartContainer" style="height: 250px; width: 100%;"></section>
+         </section>
+         <section class="col-lg-1 col-sm-1 score-graph"></section>
+      </section>
+  </section>
+
+
+
+       <!-- questions content-->
+
+
+    <section class="col-lg-12 col-sm-12 col-xs-12 question">
+      <table class="table-bordered " ng-controller="cont">
+         <thead>
+              <tr class="heading-row-custom">
+                <th>S.No</th>
+                <th>Scope and Deliverable</th>
+                <th>Status</th>
+                <th>Weight</th>
+                <th>Score</th>
+                <th>Total</th>
+              </tr> 
+          </thead>
+          <tbody>
+               <tr  ng-repeat="x in question">
+                <td>{{x.serialno}}</td>
+                <td class="bold66">{{x.name}}</td>
+                <td ng-class="x.weight/x.score<2?'Green':'red'"></td> 
+                <td> <input type="number" ng-model="x.weight" max="100" min="0" class="projectweight"/></td>
+                <td> <input type="number" ng-model="x.score" max="100" min="0" class="projectScore"/></td>
+                <td  id="total">{{x.score*x.weight}}</td>                        
+              </tr>
+          </tbody>
+      </table>
+      <section class="col-lg-2 col-lg-offset-5 col-sm-2 col-sm-offset-5 col-xs-4 col-xs-offset-4">
+        <input type="button" onclick="save_button()" value="Save" class="save_but">
+      </section>
+    </section>
+
+
+
+
+
+  
+
+   <!-- footer content-->
+
+
+   <footer class="text-center"> 
+           <section class="row"> 
+             <section class="footer-content"> &copy; 2017 North American Photon Infotech Limited. |</section>
+             <section class="website-name"><a title="photon-website" class="footer_website-color" href="http://www.photon.in">www.photon.in</a> 
+                  <img class ="hidden-xs social-img" src="../IMAGES/social-icon.png " alt="social icon">
+             </section>
+          </section>
+    </footer>
+ </section>
+<script src="../JS/filter_Date.js"></script>
+</body>
+</html>

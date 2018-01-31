@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+         <title>project scorecard | login page</title>
+         <meta name="description" content="score-board">
+         <meta name="author" content="photon-employee">
+         <meta name="keyword" content="html,css,bootstrap,project">
+         <meta name="viewport" content="width=device-width,initial-scale=1.0">
+         <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+         <link rel="stylesheet" href="../CSS/styles.css">
+         <script src="../VENDOR_JS/jquery.min.js"></script>
+         <script src="../VENDOR_JS/bootstrap.min.js"></script>
+         <script src="../VENDOR_JS/angular.min.js"></script>    
+         <script src="../JS/login_scripts.js"></script>           
+</head>
+<body class="login_body">
+  <section class="container">
+
+         <!-- Top content -->
+                    <div class="row">
+                        <div class=" col-lg-5 col-sm-6 col-sm-offset-3 form-box">
+                          <div class="form-top">
+                            <div class="form-top-left">
+                              <a href="http://www.photon.in" title="photon website" ><img src="../IMAGES/logo.png" class="img-responsive"></a>
+                            </div>
+                          </div>
+                          <div class="form-bottom">
+                             <form role="form" action="" method="post" class="login-form">
+                                <section class="control-group">
+                                    <div class="form-group">
+                                      <input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="form-username" placeholder="Employee Id" class="form-username form-control" id="form-username" required>
+                                      <label class="login-field-icon fui-user" for="login-name"></label>
+                                    </div>
+                                </section>
+                                <section class="control-group">
+                                      <div class="form-group">
+                                         <input type="password" name="form-password" placeholder="Password" class="form-password form-control" id="form-password" required>                     
+                                      </div>
+                               </section>
+                               <button type="submit" onclick="return validate()" class="butn" id="submit"><strong>Sign in!</strong></button>
+                            </form>
+                          </div>
+                        </div>
+                    </div>
+  </section>
+</body>
+</html>

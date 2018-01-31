@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body background="7wonder.jpg">
+<center>
+<div>
+<button type="button" class="heading" onclick="hello()">Login</button>
+<button type="button" class="heading" onclick="location.href='storage.html'">SignUp</button>
+</div>
+<div><label><b>Username</b></label></div>
+<div><input type="text" id="box1"/></div>
+<div><label value="Password"><b>Password</b></label></div>
+<div><input type="password" id="box2"/></div>
+<script type="text/javascript">
+   var attempt = 3;
+   function hello()
+      {
+        
+    var userlog=document.getElementById("box1").value;
+       var userpass=document.getElementById("box2").value;
+       var cmp=localStorage.getItem("allEntries");var i=(JSON.parse(cmp));
+       console.log(i);
+    if((userlog=='')||(userpass==''))
+    {
+    alert("enter the valid username and password!!");
+    }
+    else
+    {
+      if (null != i[userlog] && i[userlog] == userpass) {
+         alert("Login sucessful");
+                location.href="index.html";
+            } 
+  
+  else{
+        attempt --;
+        alert(" wrong username or password ");
+if( attempt == 0){
+document.getElementById("username").disabled = true;
+document.getElementById("password").disabled = true;
+document.getElementById("submit").disabled = true;
+return false;
+}
+       }
+  
+}
+   }
+
+</script>
+
+</center>
+</body>
+</html>

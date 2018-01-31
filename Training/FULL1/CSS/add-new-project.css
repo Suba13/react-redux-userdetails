@@ -1,0 +1,35 @@
+.formstyle{
+	width:50%;
+}
+#myForm{
+	padding-top: 50px;
+}
+
+#tablecontent{
+	padding: 50px;
+	line-height: 40px;
+}
+.tabletop,.tabletop>thead>tr>th,.tabletop>tbody>tr>td{
+	border:1px solid white;
+	line-height: 50px;
+	padding-left:10px;
+	padding-right:10px;
+	margin-bottom:10px;
+}
+.thd{
+	text-align: center!important;
+}
+.add-new-project-next-button,.add-new-project-save-button
+{
+	margin-top:5px;
+  background-color: orange; 
+  color:white;
+  font-size:20px;
+  margin-bottom:60px;
+}
+@media(min-width: 300px) and (max-width: 700px){
+	#tablecontent{
+		padding: 5px;
+		line-height: 28px;
+	}
+}

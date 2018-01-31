@@ -1,0 +1,100 @@
+.header
+{
+	display:block;
+	width: 100%;
+	height:5%;
+	
+
+}
+#headericon{
+	display: block;
+	background-image: url(icici.jpg);
+	background-size: cover;
+	width: 12.5%;
+	height:100%;
+
+
+}
+tr { 
+	background-color:white; color:orange; 
+}
+#text1,#text2,#text3,#text4,#text5,#text6{
+display: inline-block;
+height:50%;
+   width:10%;
+}
+
+.d{
+background-color: orange;
+   color: white;
+   text-align: center;
+   display:inline-block;
+   margin: 4px 2px;
+   font-size: 95%;
+   border: none;
+}
+#content1
+{
+	display:block;
+	width: 100%;
+	height:45%;
+	background-color: white;
+
+}
+#image1{
+		display:block;
+		width: 100%;
+		height:40%;
+		background-color: orange;
+		background-image: url(first.jpg);
+
+
+}
+#content2
+{
+	display:block;
+	width: 100%;
+	height:30%;
+	background-color: gray;
+	background-image: url(second.jpg);
+
+
+}
+#margin1{
+	display: inline-block;
+	border: 1px silver;
+	margin-top: 100px;
+    margin-bottom: 10px;
+    margin-right: 150px;
+    margin-left: 80px;
+  
+    width: 30%;
+    background-color: white;
+    float:left;
+}
+#margin2{
+	display: inline-block;
+	border: 1px silver;
+	margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+
+    width: 15%;
+    float:right;
+    background-color: white;
+}
+.container1 {
+    padding: 16px;
+}
+
+.container2 {
+    padding: 10px;
+}
+.h{
+
+   color: black;
+  
+   font-size: 95%;
+   border: none;
+}

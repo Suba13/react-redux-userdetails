@@ -1,0 +1,56 @@
+<section class="container  login_body forgot-password-page" ng-controller="password">
+		 <section class="row form-section">
+		   <section class="col-lg-12 col-xs-12 col-sm-12">
+			<center>
+			 <form class="forget-pswd-form row1" action="" method="post">
+					<section class="heading-section">
+						 <h2 class="forget-heading bold1">Forgot Password</h2>
+					</section>
+					<table class="frgt-pswd-tbl">
+						<tr>
+							<td class="table-data">
+								<label class="bold">Username :	</label>
+							</td>
+							<td class="table-data table-data-input1">
+								<input type="text" onkeypress='return event.charCode >= 65 && event.charCode <= 122' name="uname" class="username input" id="uname" ng-model="usname" required>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-data">
+								<label class="bold">security key :  </label>	
+							</td>
+							<td class="table-data table-data-input1">
+								<input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' name="aadhar-num" class="security-key input" id="skey" ng-model="key" required>
+							</td>
+						</tr>
+					</table>
+					<button  type="button" class="btn  forgot-submit-button" ng-click="secondtable=true" ng-disabled="!(!!usname && !!key)">Validate</button>
+					<section id="second-table" ng-show="secondtable" >
+						<table class="frgt-pswd-tbl table2">
+							<tr>
+								<td class="table-data">
+									<label class="bold">New Password :	</label>
+								</td>
+								<td class="table-data table-data-input">
+									<input type="password" id="newpass" ng-model="newps" name="newpswd" class="new-password input" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+								</td>
+							</tr>
+							<tr>
+								<td class="table-data">
+									<label class="bold">Confirm Password: 	</label>
+								</td>
+								<td class="table-data table-data-input">
+									<input type="password" id="confpass" name="confirm_pswd" ng-model="confirmps" class="confirm-password input" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+								</td>
+							</tr>
+						</table>
+						<p class="password-same" ng-show="!(newps == confirmps)">* Please enter new password and conform password same </p>
+						<p class="password-condition">* Your password must contain at least 8 characters.</p>
+						<p class="password-condition">* Password should include upper case, lower case letters, numbers and special characters. </p>
+ 						<button type="button" class="btn  forgot-submit-button" ng-click="submit_forgot_password()"  ng-disabled="!(newps == confirmps && !!newps && !!confirmps)">Submit</button>
+				</section>
+			 </form>
+			</center>
+		  </section>
+		 </section>
+		</section>

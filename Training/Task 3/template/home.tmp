@@ -1,0 +1,49 @@
+<div class="header">
+<div id="headericon"></div>
+<table><tr>
+<th><div id="text1"><input type="button" class="d" value="Personal Banking"></div></th>
+<th><div id="text2"><input type="button" class="d" value="Privilege Banking"></div></th>
+<th><div id="text3"><input type="button" class="d" value="Wealth Management"></div></th>
+<th><div id="text4"><input type="button" class="d" value="Private Banking"></div></th>
+<th><div id="text5"><input type="button" class="d" value="NRI Banking"></div></th>
+<th><div id="text6"><input type="button" class="d" value="Corporate Banking"></div></th></tr></table>
+</div>
+<button onclick="showdate()" id="date">Click here</button>
+<div id="content1">
+<div id="margin1">
+ <div class="container1">
+ <p><font size="5"><font color="orange">Login to Internet Banking</font></font></p>
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+<br>
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+     <br>  
+    <button type="submit" onclick="loginmsg()">Login</button>
+
+    <input type="checkbox" checked="checked"> Remember me
+  </div>
+  </div>
+  <div class="e">
+<div>project name:</div><div id="project-name-value"></div>
+<div>project code:</div><div id="project-code-value"></div>
+</div>
+
+  <div id="margin2">
+ <div class="container2">
+ <p><font color="orange">May i help you</font></p>
+  <p><font color="black">New User? Get User ID?</font></p>
+   <p><font color="black">Password  Get Pass Word</font></p>
+    <p><font color="black">Trouble Logging in</font></p>
+     <p><font color="black">View online demo</font></p>
+     <br>
+ 
+    
+  </div>
+  </div>
+
+</div>
+<div id="image1"></div>
+<div id="content2">
+</div>
+

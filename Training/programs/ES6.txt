@@ -1,0 +1,120 @@
+variable Declaration:
+Let:[block variable- local variable]
+1.function sum()
+{
+  let a=6;
+  console.log(a); - 6
+}
+sum();
+console.log(a);- Reference error not defined
+
+2.let a=7;
+function sum()
+{
+  let a=6;
+  console.log(a); - 6
+}
+sum();
+console.log(a); - 7
+3.if (1)
+{
+  let a=6;
+  let a=10;
+  console.log(a);
+}
+- does n't print anything
+
+var:[Global Scope,local scope with in the function]
+ 1.function sum()
+{
+  var a=6;
+  console.log(a);- 6
+}
+sum();
+console.log(a);- Reference error not defined
+2.var a=10;
+function sum()
+{
+  var a=6;
+  console.log(a);
+}
+sum();
+console.log(a);
+3.if (true)
+{
+  var a=6;
+  console.log(a);
+}
+console.log(a);
+4.if (1)
+{
+  var a=6;
+  var a=10;
+  console.log(a);- 10
+}
+5.for(var i=0;i<10;i++)
+  {
+    console.log(i); 0 to 9
+  }
+console.log(i); - 10
+
+Const:
+const a=10;
+console.log(a); -10
+
+a=20;
+console.log(a); - does n't print anything
+Template literals:
+1.let a="suba";
+let b="dharshini";
+console.log(`${a} ${b}`)
+
+2.var a=5;
+var b=6;
+console.log(`${a}+${b}`)- 5+6
+
+Arrow Function:
+1.var a=[5,2,1];
+var b=a.map(n => n * 2);
+console.log(b); - [10,5,2]
+2.let a={
+  name:"suba",
+  habbi:['a','b','c'],
+  show:function(){
+  this.habbi.forEach((n)=>
+  {
+  console.log(`${this.name,n}`) -[suba,a suba,b suba,c]
+});
+}
+}
+a.show();
+Spread operator,rest Parameter:
+1.let a=[2,3,4,5]
+let max=Math.max.apply(null,a);
+console.log(max);-2,3,4,5
+2.let a=[2,3,4,5]
+let max=Math.max(...a);
+console.log(max);-2,3,4,5
+3.let a=[2,3,4,5]
+let max=Math.max(a);
+console.log(max);-NaN
+4.let a=[2,3,4,5]
+let max=Math.max(2,3,4,5);
+console.log(max);-2,3,4,5
+Destructuring:
+1.let a={
+  name:"suba",
+  age:10,
+  location:"chennai"
+};
+console.log(a.name);
+let {name:name1}=a;
+console.log(name1);
+
+2.const person={
+  age:20
+};
+console.log(person);
+const a=person;
+  person.age=30;
+console.log(a);

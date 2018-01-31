@@ -1,0 +1,271 @@
+body{
+    overflow-x:hidden;
+}
+
+.form{
+   
+    width: 260px;
+    border: 3px solid lightgrey;
+    padding: 25px;
+    margin-right: 5px ;
+    margin-top:5px;
+    float:right;
+    height: 390px;
+    background-color: lightgrey;
+}
+.back-image{
+	 background-image: url("../Images/bg55.jpg");
+}
+.login{
+	 width: 220px;
+	 padding:auto;
+    height: 30px;
+    background-color: #8a8a89;
+
+}
+.content{
+ width: 400px;
+    border: 1px solid none;
+    padding: 25px;
+     margin-left: 95px;
+    height: 100px;
+    box-shadow: inset 0px 0px 277px 3px #1c120c;
+
+    
+}
+.main{
+	width: 500px;
+    height: 300px;
+    border: 1px solid none; 
+    margin: 150px;
+ 
+}
+.below{
+	width: 400px;
+    height: 130px;
+    border: 1px solid none; 
+ padding:5px;
+  float:right;
+
+ 
+}
+
+.services{
+	padding: 10px 10px 10px 10px;
+text-align: center; 
+height: auto;
+}
+.floating-box {
+    float: left;
+    width: 350px;
+    height: auto;
+    margin-left: 50px;
+    padding:20px;
+    border: 3px solid none; 
+
+}
+.name{
+  margin-left: 15cm;
+  color: black;
+}
+.service-head{
+font-size: 30px;
+font-family:"Arial";
+color: #519ade;
+}
+.glyphicon-search{
+font-size: 10px;
+color: black;
+}
+.glyphicon{
+font-size: 20px;
+color: red;
+}
+
+
+.container {
+    border-radius: 30px;
+    padding: 10px;
+     width: 500px;
+
+}
+.girl-image{
+	background-image: url("../Images/middle.jpg");
+}
+
+.middle{
+
+    width: 400px;
+    border: 2px solid none;
+    padding: 25px;
+    
+    height: auto;
+
+
+}
+.playicon
+{
+height:330px;
+}
+.grauduation
+{
+margin-top: 30px;
+height:auto;
+}
+.symbol
+{
+margin-left: 180px;
+}
+.graudation-content
+{
+text-transform: uppercase;
+font-size:30px;
+
+}
+.text
+{
+margin:30px;
+}
+.admission
+{
+    margin-left:130px;
+}
+.btn-danger
+{
+text-transform: uppercase;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #747475;
+    border-width: 1.4px;
+    box-sizing: border-box;
+
+
+}
+
+.linehi{
+    line-height: 5cm;
+}
+.center{
+    margin-left:6cm; 
+    }
+
+.line
+{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0; 
+    width: 500px;
+}
+.headali{
+    font-family: Arial;
+
+}
+.fonts
+{
+     font-size: 15px;
+}
+.gender{
+     line-height: 200%;
+}
+
+input[type="radio"], 
+input[type="checkbox"] {
+    height: 1.2em;
+    width: 1.2em;
+    vertical-align: middle;
+    margin: 0 0.4em 0.4em 0;
+    border: 2px solid black;
+    -webkit-appearance: none;
+
+}
+input[type="radio"] {
+    -webkit-border-radius:100%;
+    border-radius:100%;
+}
+
+
+input[type="checkbox"] {
+    -webkit-border-radius:2px;
+    border-radius:2px;
+}
+
+
+input[type="radio"]:checked:before {
+display: block;
+height: 0.3em;
+width: 0.3em;
+position: relative;
+left: 0.4em;
+top: 0.4em;
+background: rgba(0, 0, 0, 0.7);
+border-radius: 100%;
+content: '';
+}
+
+/* checkbox checked */
+input[type="checkbox"]:checked:before {
+font-weight: bold;
+color: rgba(0, 0, 0, 0.7);
+content: '\2713';
+-webkit-margin-start: 0;
+margin-left: 2px;
+font-size: 0.9em;
+}
+input {
+    width: 100%;
+}
+footer
+{
+font-size: 13px;
+font-family:Arial;
+clear:both;
+line-height: 50px;
+background-color: #8a8a89;
+height:50px;
+}
+.footer-con
+{   
+display:inline-block;
+}
+.web{
+display:inline-block;
+}
+.a-color{
+color:white;
+}
+
+@media all and (max-width: 720px)and (min-width: 300px)
+{
+    
+.content{
+ width: 300px;
+    border: 1px solid red;
+    height: 100px;
+    box-shadow: inset 0px 0px 277px 3px #1c120c;
+ 
+}
+.main{
+    width: 450px;
+    height: 160px;
+    border: 1px solid red; 
+
+}
+.below{
+    width: 400px;
+    height: 50px;
+    border: 1px solid red; 
+
+}
+.playicon
+{
+height:300px;
+margin-left: 20px;
+}
+}

@@ -1,0 +1,115 @@
+
+
+
+
+/* DATE FILTER content */
+
+
+.datefilter
+{
+ padding-top: 50px;
+ margin-bottom: 50px;
+}
+.start_date,.end_date
+{
+  margin-bottom: 10px;
+}
+.apply-bttn
+{
+ margin-top:10px;
+ padding-top: 9px;
+}
+.reset-bttn
+{
+ margin-top:10px;
+ padding-top: 9px;
+}
+.app_but
+{
+ width: 80px;
+ height: 32px;
+ border-radius: 5px;
+ background-color:#F57D1F; 
+ color:white;
+ border-style: none;
+}
+.rst_but
+{
+ width: 80px;
+ height: 32px;
+ border-radius: 5px;
+ background-color: #F57D1F;
+ border-style: none;
+ color:white;
+}
+
+
+
+/* consolitated table content */
+
+
+.all-Project-tbl
+{
+ margin-bottom:0px;
+ width: 100%;
+}
+.all_project_table-content
+{
+ font-size: 12px;
+}
+
+.table-bordered
+{
+        display: block;
+        overflow-x: auto;
+        width:100%;
+        margin-bottom:20px;
+
+        
+}
+.table-bordered>thead>tr>th,.table-bordered>thead>tr>td,.table-bordered>tbody>tr>td,.table-bordered>tbody>tr>th
+{
+       border: 1px solid #aaa;
+      padding: 15px 25px;
+      vertical-align: middle;
+      text-align: center;
+
+
+}
+.Green_consolitated
+{
+  background-color: #9AEB86;
+}
+.red_consolitated
+{
+  background-color: #F88786;
+}
+
+.heading-row-custom
+{
+ color:white;
+ background-color:#3e3e3e; 
+}
+
+
+.download_button
+{
+  height:35px;
+  width:80px;
+ border-radius: 5px;
+ background-color:#F57D1F; 
+ color:white;
+ border-style: none;
+ margin-bottom: 20px;
+}
+.consolitated-download-button
+{
+  margin-bottom: 60px;
+}
+@media all and (max-width: 700px) and (min-width: 300px)
+{
+   .table-bordered
+   {
+     width:100%;
+   }
+ }

@@ -1,0 +1,11 @@
+$(document).ready(function(){
+    $(".all-project-jquery").hide();
+    $("#all-project").click(function(){
+        $(".best-worst-jquery").hide();
+        $(".all-project-jquery").show();
+       });
+    $("#all-project").dblclick(function(){
+        $(".best-worst-jquery").show();
+        $(".all-project-jquery").hide();
+       });
+});

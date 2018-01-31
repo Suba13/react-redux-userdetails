@@ -1,0 +1,18 @@
+img {
+   max-width: 100%;
+   height: auto;
+}
+.color {
+    color:red;
+}
+
+.image{
+       background-image: url("../Images/7wonder.jpg");
+         width: 100%;
+         background-size: 100% 100%;
+}
+@media screen and (min-width: 580px) {
+    .color {
+        color: lightgreen;
+    }
+}

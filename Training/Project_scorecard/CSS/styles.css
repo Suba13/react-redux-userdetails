@@ -1,0 +1,455 @@
+.container
+{
+ padding:0px;
+}
+.row
+{
+ margin:0px;
+}
+body
+{
+ color:#000;
+}
+
+
+/* login form */
+
+
+
+.login_body
+{   padding: 10%;
+    font-family: 'arial', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #888;
+    line-height: 30px;
+    text-align: center;
+    background-image: url("../IMAGES/finalcloud.jpg");
+    
+}
+button.butn 
+{
+    height: 50px;
+    margin: 0;
+    margin-top: 20px;
+    padding: 0 20px;
+    vertical-align: middle;
+    border: 0;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 50px;
+    color: #fff;
+}
+#form-username, #form-password 
+{
+    height: 50px;
+    margin: 0;
+    padding: 0 20px;
+    vertical-align: middle;
+    background: #f8f8f8;
+    border: 3px solid #ddd;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 50px;
+    color: #888;
+}
+
+button.butn:hover 
+{ 
+  opacity: 0.6; color: #fff; 
+}
+
+
+
+strong 
+{ 
+  font-weight: 500;
+}
+
+/***** Top content *****/
+
+.inner-bg 
+{
+    padding: 100px 0 170px 0;
+}
+
+
+.form-box 
+{
+  margin-top: 35px;
+}
+
+.form-top 
+{
+  overflow: hidden;
+  padding: 0 25px 15px 25px;
+  background-color:rgba(0,0,0,0.5);
+  text-align: left;
+}
+
+.form-top-left 
+{
+   margin-top: 5px;
+    padding-right: 15px;
+    width:200px;
+    position: relative;
+    left:22%;
+}
+
+.form-bottom 
+{
+  padding: 25px 25px 30px 25px;
+  background-color:rgba(0,0,0,0.5);
+  -moz-border-radius: 0 0 4px 4px; 
+  -webkit-border-radius: 0 0 4px 4px; 
+  border-radius: 0 0 4px 4px;
+  text-align: left;
+}
+
+.form-bottom form textarea 
+{
+  height: 100px;
+}
+
+.form-bottom form button.butn
+{
+  background: #ff8928;
+  width: 100%;
+}
+
+.form-bottom form .input-error 
+{
+  border-color: #ff8928;
+}
+
+.User-Name
+{
+   padding-top: 10px;
+   padding-bottom: 10px;
+   font-size: 20px;  
+   float: right;
+   padding-right:30px;
+}
+.User_name_bg
+{
+    background-color: rgba(147, 163, 188,0.6);
+}
+
+
+
+/* header content */
+
+
+.navbar-brand
+{
+ padding:5px;
+}
+h1
+{
+ margin:0px;
+}
+.photon-header
+{
+ background-color: #3e3e3e;
+}
+.logout
+{
+ background-color: #3e3e3e;
+ color:white;
+}
+.btn:focus,.btn:hover
+{
+ color: white;
+ background-color: #3e3e3e;
+}
+
+
+/* DATE FILTER content */
+
+
+.datefilter
+{
+ padding-top: 50px;
+ margin-bottom: 50px;
+}
+.start_date
+{
+ margin-bottom:10px;
+ padding-left: 12px;
+}
+.end_date
+{
+padding-right: 10px;
+}
+.apply-bttn
+{
+ margin-top:10px;
+ padding-right: 10px;
+ padding-top: 18px;
+ text-align: right;
+}
+.reset-bttn
+{
+ margin-top:10px;
+ padding-right: 10px;
+ padding-top: 18px;
+ text-align: left;
+}
+.app_but
+{
+ width: 70px;
+ height: 25px;
+ border-radius: 5px;
+ background-color:#3e3e3e; 
+ color:white;
+ border-style: none;
+}
+.rst_but
+{
+ width: 70px;
+ height: 25px;
+ border-radius: 5px;
+ background-color: #dce2e2;
+ border-style: none;
+}
+
+
+/* best project  content & worst project content */
+
+
+.Project_Table
+{
+ text-align: center;
+ font-size: 25px;
+ padding: 20px;
+}
+.glyphicon-thumbs-up
+{
+ color:  #f57d1f;
+}
+.glyphicon-thumbs-down
+{
+ color:  #f57d1f;
+}
+.best_tbl,.least_tbl
+{
+ margin-bottom:0px;
+ width: 100%;
+ border: 1px solid black;
+}
+.least_table-content,.best_table-content
+{
+ border: 1px solid black;
+}
+
+/* project name & graph content */
+
+
+.score-card-project-name-icon
+{
+ display: inline-block;
+ height: 26px;
+ width: 26px;
+ background-image: url(../IMAGES/project_name.png);
+ background-repeat: no-repeat;
+ vertical-align: bottom;
+}
+.score-card-project-name-label
+{
+ display: inline-block;
+ width: 91.5%;
+ border-bottom: 4px solid #f57d1f;
+ font-size: 14px;
+ font-weight: bold;
+}
+.score-interpretation
+{
+ margin-top: 20px;
+}
+.scoring-interpret-table,.interpre-row
+{
+ border:2px solid #909090;
+ padding: 10px;
+ text-align: center;
+ color:  #484848;
+}
+.interpre-heading-row
+{ 
+ text-align: center;
+ color:white;
+ background-color:#3e3e3e; 
+}
+.interpre-heading-row-score
+{
+ text-align: center;
+ border-right: 2px solid #B0B0B0;
+}
+.reviewer-details
+{
+  padding-left:0px;
+ margin-top:10px;
+ line-height: 30px;
+}
+.table-reviewer-details
+{
+ padding: 3px;
+}
+
+/* questions content */
+
+
+.table-bordered
+{
+ line-height: 50px;
+ text-align: center;
+ width:100%;
+ margin-bottom:20px;
+}
+.table-bordered>tbody>tr>td
+{
+ border: 1px solid #808080;
+}
+.table-bordered>thead>tr>th
+{
+ text-align: center;
+ border: 1px solid #808080;
+}
+.heading-row-custom
+{
+ color:white;
+ background-color:#3e3e3e; 
+}
+.Green
+{
+ background-color: green;
+}
+.red
+{
+ background-color: red;
+}
+.list_project_button
+{
+ width:200px;
+ height: 40px;
+ border-radius: 5px;
+ background-color:#3e3e3e; 
+ border-style: none;
+ margin-bottom: 20px;
+ margin-left:10px;
+ color:white;
+}
+.save_but
+{
+ width:150px;
+ height: 40px;
+ border-radius: 5px;
+ background-color:#3e3e3e; 
+ border-style: none;
+ margin-bottom: 20px;
+ color:white;
+}
+input[type=number]
+{
+ width: 40px;
+ height:30px;
+} 
+.question
+{
+  margin-left: 15px;
+}
+
+/* footer content */
+
+
+footer
+{
+ font-size: 10px;
+ font-family:Arial;
+ clear:both;
+ line-height: 60px;
+ background-color: #3e3e3e;
+ height:auto;
+
+}
+.footer-content
+{   
+ color:#8a8a89;
+ display:inline-block;
+}
+.website-name
+{
+ display:inline-block;
+}
+.footer_website-color
+{
+ color:white;
+}
+.social-img
+{
+ width:80px;
+}
+
+@media all and (max-width: 700px) and (min-width: 300px)
+{
+
+  /* question content */
+
+    .inner-bg 
+    { 
+     padding: 60px 0 110px 0; 
+    }
+   .table-bordered
+   {
+     width:100%;
+   }
+
+   .form-top-left 
+   {
+      left:12%;
+   }
+   .question
+  {
+     margin-left: 0px;
+  }
+
+
+  /* footer content */
+
+  footer
+  {
+   line-height: 30px;
+   font-size: 7px;
+  }
+  .search_row
+  {
+   margin-left:55px;
+   padding-left:30px;
+   width:280px;
+  }
+  .start_date
+  {
+   padding-left: 70px;
+  }
+  .end_date
+  {
+   padding-left: 70px;
+  }
+  .apply-bttn
+  {
+   padding-top: 10px;
+   text-align: left;
+   padding-left: 70px;
+  }
+  .reset-bttn
+  {
+   padding-top: 10px;
+   text-align: left;
+  }
+  .list_project_button
+ {
+ 
+   margin-left:45px;
+   color:white;
+}
+}

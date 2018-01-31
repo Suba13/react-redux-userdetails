@@ -1,0 +1,244 @@
+<section class="container" ng-controller="score-graph" ng-init='load()'>
+
+  
+
+  <!-- project name & graph content-->
+
+
+
+  <section class="col-lg-12 col-sm-12 col-xs-12 project_space">
+      <section class="col-lg-12 col-sm-12 col-xs-12 score-card-project-name-container" id="show_project_name" style="display: block;">
+           
+             <section class="score-card-project-name-label score-card-project-name-icon" ng-controller="Project_heading">{{pname}}   ({{pdate}})</section>
+      </section>
+      <section class="col-lg-7 col-sm-7 col-xs-12 score-interpretation">    
+         <table class="scoring-interpret-table table2excel" >
+              <tr class="interpre-heading-row">
+                 <th class="interpre-heading-row-score">Score Name</th>
+                 <th class="interpre-heading-row">Scoring Interpretation</th>
+              </tr>
+              <tr>
+                 <td class="interpre-row">0-4</td>
+                 <td class="interpre-row">Project is managed by pure luck</td>
+              </tr>
+              <tr>
+                <td class="interpre-row">4-6</td>
+                <td class="interpre-row">Impending doom if not corrected. Project doesn't follow the process. It needs many corrections</td>
+              </tr> 
+              <tr>
+                  <td class="interpre-row">6-8</td>
+                  <td class="interpre-row">Meet expectation</td>
+              </tr>    
+              <tr>
+                <td class="interpre-row">8-9</td>
+                <td class="interpre-row">Exceed expectation</td>
+              </tr>  
+              <tr>
+                <td class="interpre-row">9+</td>
+                <td class="interpre-row">Exceptional</td>
+              </tr>
+          </table>
+      </section>
+      <section class="col-lg-5 col-sm-5 col-xs-12">
+         <section class="col-lg-12 col-sm-12 col-xs-12 reviewer-details">
+             <table class="table-reviewer-details" id="1">  
+              <tr class="table-reviewer-details">
+                  <td class="table-reviewer-details"><img src="IMAGES/monitor.png" alt="reviewer-symbol">
+                  </td>
+                  <td class="table-reviewer-details">Reviewer:</td>
+                  <td class="table-reviewer-details"> Suba Dharshini</td>
+              </tr>
+              <tr class="table-reviewer-details">
+                  <td class="table-reviewer-details"><img src="IMAGES/review_date.png" alt="review-date">
+                  </td>
+                  <td class="table-reviewer-details">Review Date:</td>
+                  <td class="table-reviewer-details" ng-controller="Reviewer_details_contrl">{{review_date}}</td>
+              </tr>
+              <tr class="table-reviewer-details">
+                  <td class="table-reviewer-details"><img src="IMAGES/score.png" alt="project-score">
+                  </td>
+                  <td class="table-reviewer-details">Review Score:</td>
+                  <td class="table-reviewer-details" ng-controller="Reviewer_details_contrl">{{score}}</td>
+              </tr>  
+            </table>
+        </section>
+        <section class="col-lg-11 col-sm-11 col-xs-12 score-graph">
+                <section id="chartContainer" style="height: 250px; width: 100%;"></section>
+         </section>
+         <section class="col-lg-1 col-sm-1 score-graph"></section>
+      </section>
+  </section>
+
+
+
+       <!-- questions content-->
+
+
+    <section class="col-lg-12 hidden-sm hidden-xs question" ng-controller="cont">
+      <table class="tabletop" id="2">
+         <thead >
+              <tr class="heading-row-custom ">
+                <th >S.No</th>
+                <th >Scope and Deliverable</th>
+                <th >Status</th>
+                <th >Weight</th>
+                <th >Score</th>
+                <th >Total</th>
+                <th >Comments</th>
+              </tr> 
+          </thead>
+          <tbody ng-repeat="x in question">
+               <tr >
+                <td>{{x.serialno}}</td>
+                <td class="bold66 ">{{x.name}}</td>
+                <td  ng-class="x.weight/x.score<2?'Green':'red'"></td> 
+                <td >{{x.weight}}</td>
+                <td > <input type="number" ng-model="x.score" max="10" min="0" class="projectScore"/></td>
+                <td  id="total">{{x.score*x.weight}}</td>   
+                <td ><button type="button" class="btn btn-info comment_collapse " data-toggle="collapse" ng-click="histories=true" data-target="#demo{{$index}} " ng-hide="histories">+</button><span ng-hide="histories">Show comment histories</span><button type="button" class="btn btn-info comment_collapse_hide" data-toggle="collapse" ng-click="histories=false" data-target="#demo{{$index}}" ng-show="histories">-</button><span ng-show="histories" >Hide comment histories</span></td>               
+              </tr>
+              <tr>
+            <td colspan="7" class="hiddenRow"><section  id="demo{{$index}}" class="collapse"> 
+            
+                 <section class="col-lg-12 col-sm-12 col-xs-12 comment_box question">
+                 <section class="col-lg-4 col-lg-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-sm-offset-4 ">
+                <button type="button" class="btn btn-info addcomment_collapse" data-toggle="collapse" data-target="#add_comment{{$index}}">+ Add New Comment </button> 
+                <section id="add_comment{{$index}}" class="collapse">
+               <textarea ng-model="shipment_ids"class=" text_comment" required></textarea>
+             
+      <section class="col-lg-2  col-sm-2  col-xs-2 ">
+        <button type="button" ng-click="save_button()"  ng-disabled="!shipment_ids" ng-class="shipment_ids?'comment_save_but':'active_color'">Save</button> 
+      </section>
+      <section class="col-lg-2  col-sm-2 col-xs-2 col-xs-offset-2">
+        <button type="button" onclick="cancel_button()" class="comment_cancel_but">Cancel</button>
+      </section>
+      
+      </section>
+
+</section>
+<section class="col-lg-10 col-lg-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 comment_content question">
+  <table class="tabletop comment_table table2excel " ng-controller="cont">
+         <thead>
+              <tr>
+                <th>Date</th>
+                <th>Comment</th>
+                <th>Score</th>
+             </tr> 
+          </thead>
+          <tbody  ng-repeat="c in x.previousComments track by $index">
+               <tr>
+                <td>{{c.date}}</td>
+                <td>{{c.comment}}</td>
+                <td>{{c.comment_score}}</td>             
+              </tr>
+          </tbody>
+      </table>
+</section>
+
+</section>
+              </section> </td>
+        </tr>
+          </tbody>
+      </table>
+      <section class="col-lg-12 col-sm-12 col-xs-12">
+      <section class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+      <button type="button" ng-click="submit_button()" ng-disabled="!enableMassSaveBtn" ng-class="enableMassSaveBtn?'submit_but':'save_disable_color'">Submit</button> 
+      </section>
+      <section class="col-lg-10 col-lg-offset-1 col-md-9 col-md-offset-2 col-sm-10 col-xs-8 col-xs-offset-2">
+      <input type="button"  value="Download" ng-disabled="!enableMassSaveBtn" ng-class="enableMassSaveBtn?'submit_but':'save_disable_color'" onclick="tablesToExcel(array1, array2, 'myfile.xls')">
+      </section>
+      </section>
+    </section>
+
+
+
+          <!-- mobile view content-->
+     <section class="hidden-lg hidden-md col-sm-12 col-xs-12 question question_mobile"  ng-controller="cont">
+      <table class="tabletop">
+             <tbody ng-repeat="x in question">
+              <tr class="mobile_row">
+                <td class="heading-row-custom ">S.No</td>
+                <td >{{x.serialno}}</td>
+              </tr >
+               <tr class="mobile_row ">
+                <td class="heading-row-custom ">Scope and Deliverable</td>
+                <td class="bold66 td1">{{x.name}}</td>
+              </tr>
+              <tr class="mobile_row">
+                <td class="heading-row-custom ">Status</td>
+                <td ng-class="x.weight/x.score<2?'Green':'red'"></td>
+              </tr>
+              <tr class="mobile_row">
+                <td class="heading-row-custom ">Weight</td>
+                <td>{{x.weight}}</td>
+              </tr>
+              <tr class="mobile_row">
+                <td class="heading-row-custom ">Score</td>
+                  <td> <input type="number" ng-model="x.score" max="10" min="0" class="projectScore"/></td>
+              </tr>
+              <tr class="mobile_row">
+                <td class="heading-row-custom ">Total</td>
+                <td  id="total">{{x.score*x.weight}}</td>
+              </tr>
+              <tr class="mobile_row ">
+                <td class="heading-row-custom">Comments</td>
+                <td><button type="button" class="btn btn-info comment_collapse " data-toggle="collapse" ng-click="histories=true" data-target="#comment{{$index}} " ng-hide="histories">+</button><span ng-hide="histories">Show comment histories</span><button type="button" class="btn btn-info comment_collapse_hide" data-toggle="collapse" ng-click="histories=false" data-target="#comment{{$index}}" ng-show="histories">-</button><span ng-show="histories" >Hide comment histories</span></td>
+              </tr>
+                            <tr>
+            <td colspan="7" class="hiddenRow"><section  id="comment{{$index}}" class="collapse"> 
+            
+                 <section class="col-sm-12 col-xs-12 comment_box question">
+                 <section class="col-sm-5  col-xs-8 col-xs-offset-2 ">
+                <button type="button" class="btn btn-info addcomment_collapse" data-toggle="collapse" data-target="#add_comment_mobile{{$index}}">+ Add New Comment </button>
+                
+                <section id="add_comment_mobile{{$index}}" class="collapse">
+                
+               <textarea ng-model="shipment_ids"class=" text_comment" required></textarea>
+            
+          
+      <section class="col-sm-1  col-xs-1 ">
+        <button type="button" ng-click="save_button()" ng-disabled="!shipment_ids" ng-class="shipment_ids?'comment_save_but':'active_color'">Save</button> 
+      </section>
+      <section class="col-sm-1 col-xs-1 col-xs-offset-4 ">
+        <button type="button" onclick="cancel_button()" class="comment_cancel_but">Cancel</button>
+      </section>
+   
+      </section>
+
+</section>
+<section class="col-sm-9 col-sm-offset-1 col-xs-6  comment_content question">
+  <table class="tabletop comment_table table2excel " ng-controller="cont">
+         <thead>
+              <tr class="comment_table_heading">
+                <th>Date</th>
+                <th>Comment</th>
+                <th>Score</th>
+             </tr> 
+          </thead>
+          <tbody  ng-repeat="c in x.previousComments track by $index">
+               <tr>
+                <td>{{c.date}}</td>
+                <td>{{c.comment}}</td>
+                <td>{{c.comment_score}}</td>             
+              </tr>
+          </tbody>
+      </table>
+</section>
+
+</section>
+              </section> </td>
+        </tr>
+        <tr>
+        </tr>
+          </tbody>
+      </table>
+      <section class="col-sm-12 col-xs-12">
+      <section class="col-sm-2 col-xs-2">
+      <button type="button" ng-click="submit_button()" ng-disabled="!enableMassSaveBtn" ng-class="enableMassSaveBtn?'submit_but':'save_disable_color'">Submit</button>  
+      </section>
+      <section class=" col-sm-8 col-sm-offset-2 col-xs-7 col-xs-offset-3">
+      <input type="button"  value="Download" ng-disabled="!enableMassSaveBtn" ng-class="enableMassSaveBtn?'submit_but':'save_disable_color'"  onclick="tablesToExcel(array1, array2, 'myfile.xls')">
+      </section>
+      </section>
+    </section>
+ </section>

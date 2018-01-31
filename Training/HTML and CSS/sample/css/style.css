@@ -1,0 +1,11 @@
+
+.first{
+  margin: 20px;
+   border-style: solid;
+   border-color: black;
+  padding: 10px;
+}
+.heading{
+	 font-size: 2.5em;
+	 background-color: green;
+}

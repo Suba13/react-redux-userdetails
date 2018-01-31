@@ -1,0 +1,173 @@
+.select_dropdown
+{
+  margin-bottom:50px;
+}
+
+.best_worst_project
+{
+  margin-bottom:50px;
+}
+/*Add New Projects */
+
+
+.form_search{
+    display: block;
+    width: 200px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    float: left;
+    border: 1px solid #;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.add_projects
+{
+  width:200px;
+ height: 40px;
+ border-radius: 5px;
+ background-color:#3e3e3e; 
+ border-style: none;
+ margin-bottom: 20px;
+ margin-left:20px;
+ color:white;
+ margin-top: 40px;
+}
+
+
+/* best project  content & worst project content */
+
+.btn btn-primary dropdown-toggle dropdown
+{
+  width:200px;
+ height: 40px;
+ border-radius: 5px;
+ background-color:#3e3e3e; 
+ border-style: none;
+ margin-bottom: 20px;
+ margin-left:10px;
+ color:white;
+}
+
+.btn-primary {
+   width:200px;
+ height: 40px;
+ border-radius: 5px;
+ background-color:#3e3e3e; 
+ border-style: none;
+ margin-bottom: 20px;
+ margin-left:10px;
+ color:white;
+margin-top: 25px;
+}
+
+.btn-primary:focus{
+    color:#3e3e3e;
+   background-color:#3e3e3e;
+ }
+
+
+
+.Project_Table
+{
+ text-align: center;
+ font-size: 25px;
+ padding: 20px;
+}
+.glyphicon-thumbs-up
+{
+ color:  #f57d1f;
+}
+.glyphicon-thumbs-down
+{
+ color:  #f57d1f;
+}
+.best_tbl,.least_tbl
+{
+ margin-bottom:0px;
+ width: 100%;
+ border: 1px solid black;
+}
+.least_table-content,.best_table-content
+{
+ border: 1px solid black;
+}
+
+/* project name & graph content */
+
+
+.score-card-project-name-icon
+{
+ display: inline-block;
+ height: 26px;
+ width: 26px;
+ background-image: url(../IMAGES/project_name.png);
+ background-repeat: no-repeat;
+ vertical-align: bottom;
+}
+.score-card-project-name-label
+{
+ display: inline-block;
+ width: 91.5%;
+ border-bottom: 4px solid #f57d1f;
+ font-size: 14px;
+ font-weight: bold;
+}
+#chartContainer
+{
+margin-top:51px;
+}
+
+
+.buttons
+{
+  margin-top: 25px;
+}
+
+.heading-row-custom
+{
+ color:white;
+ background-color:#3e3e3e; 
+}
+
+
+@media all and (max-width: 700px) and (min-width: 300px)
+{
+
+  /* question content */
+
+    .inner-bg 
+    { 
+     padding: 60px 0 110px 0; 
+   }
+   .question
+  {
+     margin-left: 0px;
+  }
+ .select_dropdown
+{
+  margin-bottom:10px;
+}
+
+
+div.dataTables_filter label {
+    font-weight: normal;
+    white-space: nowrap;
+    text-align: left;
+    margin-right: 35px;
+}
+
+  
+  
+  .list_project_button
+ {
+ 
+   margin-left:45px;
+   color:white;
+}
+}

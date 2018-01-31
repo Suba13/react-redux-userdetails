@@ -1,0 +1,252 @@
+.btn>.btn-info:focus,.btn>.btn-info:hover{
+ color: white;
+ background-color: #3e3e3e;
+}
+
+
+/* project name & graph content */
+
+
+.score-card-project-name-icon{
+ display: inline-block;
+ height: 26px;
+ width: 26px;
+ background-image: url(../IMAGES/project_name.png);
+ background-repeat: no-repeat;
+ vertical-align: bottom;
+ padding-bottom: 25px;
+
+}
+.score-card-project-name-label{
+ display: inline-block;
+ width: 91.5%;
+ border-bottom: 4px solid #f57d1f;
+ font-size: 15px;
+ font-weight: bold;
+ padding-left: 30px;
+
+}
+.score-interpretation{
+ margin-top: 20px;
+}
+.scoring-interpret-table,.interpre-row{
+ border:2px solid #909090;
+ padding: 10px;
+  color:  #484848;
+}
+.interpre-heading-row{ 
+ padding: 10px;
+ color:white;
+ background-color:#3e3e3e; 
+}
+.interpre-heading-row-score{
+ text-align: center;
+ border-right: 2px solid #B0B0B0;
+}
+.reviewer-details{
+  padding-left:0px;
+ margin-top:10px;
+ line-height: 30px;
+}
+.table-reviewer-details{
+ padding: 3px;
+}
+
+/* questions content */
+
+.table-bordered{
+  line-height: 50px;
+  width:100%;
+ margin-bottom:20px; 
+}
+.table-bordered>tbody>tr>td{
+ border: 1px solid #808080;
+ padding-left: 7px;
+ text-align: left;
+}
+.table-bordered>thead>tr>th{
+ padding-left: 10px;
+ border: 1px solid #808080;
+}
+.heading-row-custom{
+ color:white;
+ background-color:#3e3e3e; 
+}
+.Green{
+ background-color: green;
+}
+.red{
+ background-color: red;
+}
+.list_project_button{
+ width:200px;
+ height: 40px;
+ border-radius: 5px;
+ background-color:#3e3e3e; 
+ border-style: none;
+ margin-bottom: 20px;
+ margin-left:10px;
+ color:white;
+}
+.download_but,.submit_but{
+ width:150px;
+ height: 40px;
+ border-radius: 5px;
+  background-color:#ff832b; 
+ border-style: none;
+ margin-bottom: 80px;
+ color:white;
+
+}
+input[type=number]{
+ width: 40px;
+ height:30px;
+} 
+.question{
+  margin-left: 15px;
+}
+.project_space{
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+.comment_collapse,.comment_collapse_hide{
+  background-color: #535354;
+    border-color: #a1a1a3;
+    padding: 1px 4px;
+}
+.comment_collapse_hide{
+       padding: 1px 6px;
+}
+.btn-info:active:focus, .btn-info:active:hover{
+  color: #fff;
+  background-color: #535354; 
+}
+.addcomment_collapse{
+  background-color:black;
+    border-color:black;
+}
+.comment_box{
+  text-align: center;
+}
+.text_comment{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: block;
+  height: 110px;
+    width: 100%;
+}
+.comment_save_but,.comment_cancel_but{
+  width:60px;
+ height: 50px;
+ border-radius: 4px;
+background-color:black;  
+ border-style: none;
+ margin-bottom: 10px;
+ margin-top: 10px;
+ color:white;
+}
+.active_color{
+   width:60px;
+ height: 50px;
+ border-radius: 4px;
+background-color:black;  
+opacity:0.5;
+ border-style: none;
+ margin-bottom: 10px;
+ margin-top: 10px;
+ color:white;
+}
+.save_disable_color,.download_but_disable{ 
+opacity:0.5;
+width:150px;
+ height: 40px;
+ border-radius: 5px;
+  background-color:#ff832b; 
+ border-style: none;
+ margin-bottom: 80px;
+ color:white;
+}
+.comment_table{
+  margin-top: 15px;
+}
+.save_content,.cancel_content{
+  margin-top: 15px;
+}
+.comment_content{
+     margin-left: 15px;
+}
+
+
+
+
+
+@media all and (max-width: 700px) and (min-width: 300px){
+  /* question content */
+  .score-card-project-name-label{
+ display: inline-block;
+ width: 91.5%;
+ border-bottom: 4px solid #f57d1f;
+ font-size: 10px;
+ font-weight: bold;
+  padding-bottom: 30px;
+}
+
+    .inner-bg { 
+     padding: 60px 0 110px 0; 
+    }
+   .table-bordered{
+     width:100%;
+   }
+   .form-top-left {
+      left:12%;
+   }
+   .question{
+     margin-left: 0px;
+  }
+  .question_mobile{
+ margin-left: 0px; 
+}
+.table-bordered{
+ line-height: 15px;
+  width:100%;
+ margin-bottom:20px;
+}
+.comment_box{
+  padding: 3px;
+}
+.download_but,.submit_but{
+ width: 80px;
+ height: 40px;
+ border-radius: 5px;
+  background-color:#ff832b; 
+ border-style: none;
+ margin-bottom: 80px;
+ color:white;
+}
+.download_but_disable,.save_disable_color{ 
+opacity:0.5;
+width:80px;
+ height: 40px;
+ border-radius: 5px;
+  background-color:#ff832b; 
+ border-style: none;
+ margin-bottom: 80px;
+ color:white;
+}
+.interpre-row{
+  padding: 3px;
+}
+.mobile_row{
+  padding: 50px;
+}
+
+.table-bordered>tbody>tr>td{
+ border: 1px solid #808080;
+ padding: 6px;
+ text-align: left;
+}
+.comment_table_heading{
+  height: 30px;
+}
+
+}
